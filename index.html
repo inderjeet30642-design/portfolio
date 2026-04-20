@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7632782218371378"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> | Research Scholar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+
+/* ================= BASE + ANIMATED BACKGROUND ================= */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+    background: linear-gradient(-45deg, #e0f2fe, #f0fdf4, #eef2ff, #fef3c7);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    transition: all 0.4s ease;
+}
+
+/* Dark Mode */
+.dark body {
+    color: #e5e7eb;
+    background: linear-gradient(-45deg, #020617, #0f172a, #1e293b, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 20s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Soft glow overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(16,185,129,0.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(59,130,246,0.15), transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ================= NAVIGATION ================= */
+.nav-link {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-300;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: #10b981;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 60%;
+}
+
+/* ================= GLASS CARD ================= */
+.card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect */
+.card::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(16,185,129,0.15), transparent 60%);
+    top: -20%;
+    left: -20%;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+/* Hover motion */
+.card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 25px 60px rgba(16,185,129,0.2);
+}
+
+/* Dark cards */
+.dark .card {
+    background: rgba(30,41,59,0.6);
+    border: 1px solid rgba(148,163,184,0.2);
+}
+
+/* ================= SPECIAL CARDS ================= */
+
+/* Education */
+.education-card {
+    @apply card;
+    border-left: 4px solid #3b82f6;
+}
+
+/* Research */
+.research-item {
+    @apply card;
+    padding: 1.3rem;
+    border-left: 4px solid #a855f7;
+}
+
+/* Publications */
+.publication-item {
+    @apply card;
+    border-left: 4px solid #f59e0b;
+}
+
+/* Contact */
+.contact-link {
+    @apply card flex items-center gap-4;
+    text-decoration: none;
+    border-left: 4px solid #10b981;
+}
+
+.contact-link:hover {
+    transform: translateY(-6px);
+}
+
+/* ================= PUBLICATION CONTAINER ================= */
+.publications-container {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.dark .publications-container {
+    background: rgba(30,41,59,0.6);
+}
+
+/* ================= HEADINGS ================= */
+.section-header {
+    font-weight: 800;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #10b981, #22c55e, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* ================= BUTTON / INTERACTION ================= */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 0 15px rgba(16,185,129,0.5);
+}
+
+/* ================= CHART ================= */
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    height: 320px;
+}
+
+/* ================= CLEAN TEXT ================= */
+.text-gray-700,
+.text-gray-500,
+.text-gray-400 {
+    color: inherit !important;
+}
+
+/* ================= SMOOTH SCROLL ================= */
+html {
+    scroll-behavior: smooth;
+}
+
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <div id="app-container" class="flex-grow">
+        <header class="bg-gradient-to-r from-emerald-600 to-green-700 dark:from-gray-800 dark:to-gray-950 shadow-xl sticky top-0 z-50 backdrop-blur-md">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center">
+                        <div class="relative">
+                            <img src="https://placehold.co/50x50/D1FAE5/047857?text=HR" alt="Inderjeetj" class="h-14 w-14 rounded-full mr-4 border-3 border-white dark:border-emerald-400 shadow-md transition-transform duration-300 hover:scale-110">
+                            <div class="absolute inset-0 h-14 w-14 rounded-full bg-gradient-to-r from-emerald-400 to-green-500 opacity-0 hover:opacity-20 transition-opacity duration-300 mr-4"></div>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl sm:text-4xl font-bold text-white dark:text-emerald-400">Inderjeet</h1>
+                            <p class="text-sm sm:text-base text-emerald-100 dark:text-gray-400 mt-1">Senior Project Associate | Dept. of EED, IIT Bombay</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <button id="theme-toggle" aria-label="Toggle theme" class="p-3 rounded-full text-white dark:text-emerald-400 hover:bg-emerald-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-emerald-600 dark:focus:ring-offset-gray-800 focus:ring-white transition-all duration-300 hover:scale-110">
+                            <span id="theme-icon" class="text-xl">🌙</span>
+                        </button>
+                    </div>
+                </div>
+                <nav class="pb-4 -mb-px flex space-x-3 sm:space-x-6 overflow-x-auto justify-center">
+                    <a href="#about" class="nav-link text-white hover:bg-emerald-700">About</a>
+                    <a href="#education" class="nav-link text-white hover:bg-emerald-700">Education</a>
+                    <a href="#research" class="nav-link text-white hover:bg-emerald-700">Research</a>
+                    <a href="#publications" class="nav-link text-white hover:bg-emerald-700">Publications</a>
+                    <a href="#contact" class="nav-link text-white hover:bg-emerald-700">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+            <!-- Hero Contact Section -->
+
+
+<!-- About Me -->
+<section id="about" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">About Me</h2>
+    
+    <div class="space-y-6 text-base sm:text-lg leading-relaxed card">
+        
+        <p>
+            I am a <strong class="text-blue-600">Senior Project Associate</strong> in the Department of Electrical Engineering at 
+            <strong class="text-blue-600">IIT Bombay</strong>. My research focuses on 
+            <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, and <strong>Image Processing</strong>, 
+            with a particular emphasis on <strong>Image Super-Resolution</strong>, 
+            <strong>Image Restoration</strong>, and <strong>Contactless Biometric Recognition</strong>.
+        </p>
+
+        <p>
+            With a foundation in <strong>Signal Processing</strong> from my undergraduate studies, 
+            I transitioned into advanced areas of visual computing to explore how machines can perceive, 
+            reconstruct, and enhance visual data. My work lies at the intersection of deep neural networks 
+            and image processing, where I develop computational models capable of recovering and interpreting 
+            complex visual information.
+        </p>
+
+        <p>
+            I aim to design intelligent systems that address challenging real-world problems, including 
+            high-quality image reconstruction, restoration of degraded images, and robust 
+            contactless biometric recognition.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-md">
+            <p class="font-semibold text-blue-700">Current Role</p>
+            <p>
+                I am currently working as a <strong>Senior Project Associate</strong> at 
+                <strong>IIT Bombay</strong>, contributing to sponsored research projects focused on 
+                computer vision and deep learning for biometric recognition.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+    <section id="experience" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Experience</h2>
+
+    <div class="space-y-8">
+
+        <!-- Current Position -->
+        <div class="experience-card">
+            <div class="relative z-10">
+                <h3 class="text-xl font-semibold text-blue-700">
+                    Senior Project Associate
+                </h3>
+                <p class="text-gray-700 font-medium">
+                    Indian Institute of Technology (IIT) Bombay
+                </p>
+                <p class="text-sm text-gray-500 mt-1">
+                    Jan 2026 – Present
+                </p>
+
+                <ul class="list-disc ml-6 mt-4 text-gray-700 space-y-2 leading-relaxed">
+                    <li>
+                        Working on sponsored research project (ANRF-PAIR IITB Hub–Spokes).
+                    </li>
+                    <li>
+                        Conducting research in computer vision and deep learning for 
+                        <strong>contactless biometric recognition</strong>.
+                    </li>
+                    <li>
+                        Designing and developing advanced deep learning models for 
+                        image analysis and pattern recognition.
+                    </li>
+                    <li>
+                        Contributions to academic work, research development, experimentation, and collaborative project execution.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+</section>
+
+    <!-- Education -->
+<!-- Education -->
+<section id="education" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Education</h2>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- PhD -->
+        <div class="education-card flex items-start gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Indian_Institute_of_Technology_Ropar_logo.svg" 
+                 alt="IIT Ropar Logo" 
+                 class="w-14 h-14 object-contain mt-1">
+            
+            <div class="relative z-10">
+                <h3 class="text-xl font-semibold text-blue-700 mb-1">
+                    Ph.D. in Electrical Engineering
+                </h3>
+                <p class="text-gray-700 font-medium">
+                    Indian Institute of Technology (IIT), Ropar
+                </p>
+                <p class="text-sm text-gray-500 mt-1">
+                    Feb 2021 – Jan 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- MTech -->
+        <div class="education-card flex items-start gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/en/b/b8/National_Institute_of_Technology%2C_Hamirpur_Logo.png" 
+                 alt="NIT Hamirpur Logo" 
+                 class="w-14 h-14 object-contain mt-1">
+            
+            <div class="relative z-10">
+                <h3 class="text-xl font-semibold text-blue-700 mb-1">
+                    M.Tech in Communication Systems & Networks, Electronics & Communication Engineering (ECE)
+                </h3>
+                <p class="text-gray-700 font-medium">
+                    National Institute of Technology (NIT), Hamirpur
+                </p>
+                <p class="text-sm text-gray-500 mt-1">
+                    2018 – 2020
+                </p>
+            </div>
+        </div>
+
+        <!-- BTech -->
+        <div class="education-card md:col-span-2 flex items-start gap-4">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f9/JNGEC_Logo.jpg" 
+                 alt="HPTU Logo" 
+                 class="w-14 h-14 object-contain mt-1">
+            
+            <div class="relative z-10">
+                <h3 class="text-xl font-semibold text-blue-700 mb-1">
+                    B.Tech in Electronics & Communication Engineering, Jawaharlal Nehru Government Engineering College (JNGEC), Sundernagar (Mandi), Himachal Pradesh
+                </h3>
+                <p class="text-gray-700 font-medium">
+                    Himachal Pradesh Technical University (HPTU), Hamirpur, Himachal Pradesh 
+                </p>
+                <p class="text-sm text-gray-500 mt-1">
+                    Completed 2017
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Research Interests -->
+    <section id="research" class="pt-4">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Research Interests</h2>
+        <div class="space-y-4">
+
+             <div class="research-item">
+                <div class="relative z-10">
+                    <span class="text-base sm:text-lg text-gray-700 font-medium">
+                        Digital Image Processing, Computer Vision, and Deep Learning
+                    </span>
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="relative z-10">
+                    <span class="text-base sm:text-lg text-gray-700 font-medium">
+                        Image Super-Resolution and Low-Level Vision
+                    </span>
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="relative z-10">
+                    <span class="text-base sm:text-lg text-gray-700 font-medium">
+                        Image Restoration and Enhancement (Dehazing, Deraining, Low-light Enhancement)
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="research-item">
+                <div class="relative z-10">
+                    <span class="text-base sm:text-lg text-gray-700 font-medium">
+                        Computer Vision Applications in Contactless Biometrics
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+            
+            </section>
+
+</section>
+
+</section>
+
+<section id="publications" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Publications</h2>
+
+    <div class="publications-container">
+
+        <!-- Journal Papers -->
+        <h3 class="text-2xl font-semibold text-emerald-700 mb-6">Journal Papers</h3>
+        <div class="space-y-6">
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [1] <strong class="text-emerald-600">Inderjeet</strong> and J. S. Sahambi, "CMOA-Net: Competent Multi-Observant Attention Network for Single-Image Super-Resolution,"
+                     in <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, vol. 9, no. 6, pp. 3881-3894, Dec. 2025, doi: 10.1109/TETCI.2025.3574561.
+                    <a href="https://ieeexplore.ieee.org/document/11033188/" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+<div class="publication-item">
+    <p class="text-gray-600 leading-relaxed">
+        [2] <strong class="text-emerald-600">Inderjeet</strong>, Jyotindra Singh Sahambi, 
+        RMRDN: Recurrent multi-receptive residual dense network for image super-resolution, 
+        <em>Digital Signal Processing</em>,
+        Volume 168, Part C, 2026, 105556, ISSN 1051-2004, 
+        https://doi.org/10.1016/j.dsp.2025.105556
+        <a href="https://www.sciencedirect.com/science/article/pii/S1051200425005780" 
+           target="_blank" 
+           class="text-emerald-600 hover:underline">[Link]</a>
+    </p>
+</div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [3] <strong class="text-emerald-600"></strong>Inderjeet</strong>, Jyotindra Singh Sahambi, MDTN: Multi-scale Dense Transformer Network for single-image super-resolution, <em>Image and Vision Computing</em>,
+                      Volume 164, 2025, 105779, ISSN 0262-8856, https://doi.org/10.1016/j.imavis.2025.105779.
+                    <a href="https://doi.org/10.1016/j.imavis.2025.105779" target="_blank" class="text-emerald-600 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [4] <strong class="text-emerald-600"></strong>Inderjeet</strong> and J. S. Sahambi, 
+                    “Image Super-Resolution Methods Based on Edge-Aware Detail-Preserving Network,” 
+                    <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, Accepted.
+                </p>
+            </div>
+
+
+
+        </div>
+
+        <!-- Conference Papers -->
+        <h3 class="text-2xl font-semibold text-emerald-700 mt-10 mb-6">Conference Papers</h3>
+        <div class="space-y-6">
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [1] <strong class="text-emerald-600">Inderjeet</strong> and J. S. Sahambi, "GAMSRN: Global Attention Multi-Scale Residual Network for Single-Image Super-Resolution and Low-Light Enhancement,"
+                     2025 National Conference on Communications (NCC), New Delhi, India, 2025, pp. 1-6, doi: 10.1109/NCC63735.2025.10982884. 
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10982884" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [2] <strong class="text-emerald-600"></strong>Inderjeet</strong> and J. S. Sahambi, "Residual Frequency Content Awareness Approach for Image Super Resolution," 2024 National Conference on Communications (NCC),
+                     Chennai, India, 2024, pp. 1-6, doi: 10.1109/NCC60321.2024.10485711.
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10067881" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [3] <strong class="text-emerald-600"></strong>Inderjeet</strong>, Sahambi, J.S. (2024). Efficient Contextual Feature Network for Single Image Super Resolution. 
+                    In: Kaur, H., Jakhetiya, V., Goyal, P., Khanna, P., Raman, B., Kumar, S. (eds) Computer Vision and Image Processing. CVIP 2023. 
+                    Communications in Computer and Information Science, vol 2010. Springer, Cham. https://doi.org/10.1007/978-3-031-58174-8_18 
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-58174-8_18" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [4] <strong class="text-emerald-600"></strong>Inderjeet</strong> and J. S. Sahambi, "A Lightweight Deep Residual Attention Network for Single Image Super Resolution,"
+                     2023 National Conference on Communications (NCC), Guwahati, India, 2023, pp. 1-6, doi: 10.1109/NCC56989.2023.10067881. 
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10485711" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [5] <strong class="text-emerald-600"></strong>Inderjeet</strong>, A. Bharadwaj and J. S. Sahambi, "CDAN: Contextual Detail Awareness Network for Image Super-Resolution,"
+                     2025 IEEE International Conference on Internet of Things and Intelligence Systems (IoTaIS),
+                     Bali, Indonesia, 2025, pp. 59-65, doi: 10.1109/IoTaIS67227.2025.11282077.
+                    <a href="https://ieeexplore.ieee.org/document/11282077" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+            <div class="publication-item">
+                <p class="text-gray-700 leading-relaxed">
+                    [6] A. Bharadwaj, <strong class="text-emerald-600"></strong>Inderjeet</strong> and J. S. Sahambi, "MDNet: Multi-Scale Detail-aware Network for Low-Light Image Enhancement," 
+                    2025 <em>IEEE International Conference on Internet of Things and Intelligence Systems (IoTaIS)</em>, Bali, Indonesia, 2025,
+                     pp. 76-82, doi: 10.1109/IoTaIS67227.2025.11282085.
+                     <a href="https://ieeexplore.ieee.org/document/11282085" target="_blank" class="text-emerald-700 hover:underline">[Link]</a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="skills" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Technical Skills</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="card p-6">
+            <h3 class="text-xl font-semibold text-blue-700 mb-3">Programming</h3>
+            <p class="text-gray-700">Python, MATLAB</p>
+        </div>
+
+        <div class="card p-6">
+            <h3 class="text-xl font-semibold text-blue-700 mb-3">Deep Learning</h3>
+            <p class="text-gray-700">CNNs, RNNs, Transformers, GANs, VAEs, Diffusion Models</p>
+        </div>
+
+        <div class="card p-6">
+            <h3 class="text-xl font-semibold text-blue-700 mb-3">Machine Learning</h3>
+            <p class="text-gray-700">SVM, PCA, Regression, ANN</p>
+        </div>
+
+        <div class="card p-6">
+            <h3 class="text-xl font-semibold text-blue-700 mb-3">Research & Tools</h3>
+            <p class="text-gray-700">LaTeX, MS Office, Data Analysis, Experimental Design</p>
+        </div>
+
+        <div class="card p-6 md:col-span-2">
+            <h3 class="text-xl font-semibold text-blue-700 mb-3">Domains</h3>
+            <p class="text-gray-700">
+                Computer Vision, Image Processing, Image Super-Resolution, 
+                Low-Level Vision, Image Enhancement, Biometrics
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="teaching" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Teaching Assistantship</h2>
+
+    <div class="space-y-6">
+
+        <div class="experience-card">
+            <h3 class="text-xl font-semibold text-blue-700">Signal and Systems (EE201)</h3>
+            <p class="text-gray-600 text-sm">IIT Ropar | Jul–Dec 2022, Jul–Dec 2023, Jul–Dec 2024, Jul–Dec 2025</p>
+        </div>
+
+        <div class="experience-card">
+            <h3 class="text-xl font-semibold text-blue-700">Circuit Theory (EE209)</h3>
+            <p class="text-gray-600 text-sm">IIT Ropar | Jan–May 2023, Jan–May 2024</p>
+        </div>
+
+        <div class="experience-card">
+            <h3 class="text-xl font-semibold text-blue-700">Basic Electronics Lab (GE108)</h3>
+            <p class="text-gray-600 text-sm">IIT Ropar | Jan–May 2022</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="pt-4">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 section-header">Contact</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Email -->
+        <a href="mailto:inderjeet30642@gmail.com" class="contact-link">
+            <div class="flex items-center">
+                <span class="text-2xl mr-4">📧</span>
+                <div>
+                    <h4 class="font-semibold text-gray-700">Email</h4>
+                    <p class="text-gray-500">inderjeet30642@gmail.com</p>
+                </div>
+            </div>
+        </a>
+
+
+
+        
+    </div>
+</section>
+        </main>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            themeIcon.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+            themeIcon.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
