@@ -1,1009 +1,769 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>--
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inderjeet | Post-Doctoral Fellow Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Merriweather', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            200: '#99f6e4',
-                            300: '#5eead4',
-                            400: '#2dd4bf',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inderjeet — Post-Doctoral Fellow, IIT Bombay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#12141c;
+    --ink-2:#1b1e2a;
+    --paper:#f6f2e9;
+    --paper-2:#eee8d9;
+    --line:#d9d0bb;
+    --line-dark:rgba(246,242,233,0.12);
+    --signal:#2f4fe0;
+    --signal-soft:#e7ecff;
+    --copper:#bd6a30;
+    --copper-soft:#f5e6d6;
+    --ink-soft:#565c6d;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Space Grotesk', sans-serif;
+  }
+  .font-display{font-family:'Space Grotesk', sans-serif;}
+  .font-serif{font-family:'Source Serif 4', serif;}
+  .font-mono{font-family:'IBM Plex Mono', monospace;}
 
-    <style>
-        body {
-            background-color: #f8fafc;
-            color: #1e293b;
-            transition: background-color 0.5s ease, color 0.5s ease;
-            overflow-x: hidden;
-        }
-        .dark body { background-color: #020617; color: #f1f5f9; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--signal);
+  }
+  .eyebrow::before{content:"// ";color:var(--line);}
 
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(15, 118, 110, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(15, 118, 110, 0.05) 1px, transparent 1px);
-            position: fixed; inset: 0; z-index: -2; pointer-events: none;
-        }
-        .dark .bg-grid {
-            background-image: linear-gradient(to right, rgba(45, 212, 191, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(45, 212, 191, 0.03) 1px, transparent 1px);
-        }
+  section{scroll-margin-top:5.5rem;}
 
-        .glass {
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .dark .glass { background: rgba(15,23,42,0.7); border: 1px solid rgba(255,255,255,0.05); }
+  .card{
+    background:#fffdf7;
+    border:1px solid var(--line);
+    border-radius:2px;
+  }
+  .card:hover{border-color:var(--signal);}
 
-        .glass-card {
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s ease;
-        }
-        .dark .glass-card {
-            background: rgba(30,41,59,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-        }
-        .glass-card:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(20,184,166,0.15); }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    letter-spacing:0.02em;
+  }
+  .btn-primary:hover{background:var(--signal);}
+  .btn-secondary{
+    background:transparent;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+  }
+  .btn-secondary:hover{border-color:var(--signal);color:var(--signal);}
 
-        .text-gradient {
-            background: linear-gradient(135deg, #0d9488, #3b82f6);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .dark .text-gradient {
-            background: linear-gradient(135deg, #2dd4bf, #60a5fa);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
+  .pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.03em;
+    padding:2px 8px;
+    border-radius:2px;
+    border:1px solid var(--line);
+  }
+  .pill-if{background:var(--copper-soft);color:var(--copper);border-color:#e5c8a4;}
+  .pill-q{background:var(--signal-soft);color:var(--signal);border-color:#c7d1ff;}
+  .pill-h{background:#eef2ea;color:#456136;border-color:#d3ddc9;}
+  .pill-status-pub{background:#eef2ea;color:#456136;border-color:#d3ddc9;}
+  .pill-status-rev{background:#fbf3d9;color:#8a6a11;border-color:#eddb9c;}
+  .pill-status-acc{background:var(--signal-soft);color:var(--signal);border-color:#c7d1ff;}
 
-        .nav-link { position: relative; }
-        .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px;
-            bottom: -2px; left: 0; background-color: #14b8a6; transition: width 0.3s ease;
-        }
-        .nav-link:hover::after { width: 100%; }
+  .rail{position:relative;padding-left:1.75rem;}
+  .rail::before{
+    content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;
+    background:repeating-linear-gradient(to bottom, var(--line) 0, var(--line) 4px, transparent 4px, transparent 9px);
+  }
+  .rail-item{position:relative;margin-bottom:2.25rem;}
+  .rail-item:last-child{margin-bottom:0;}
+  .rail-dot{
+    position:absolute;left:-1.75rem;top:0.35rem;width:11px;height:11px;
+    border:2px solid var(--signal);background:var(--paper);border-radius:1px;transform:rotate(45deg);
+  }
 
-        .timeline-item { position: relative; padding-left: 2.5rem; margin-bottom: 2rem; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: -2rem;
-            width: 2px; background: #e2e8f0;
-        }
-        .dark .timeline-item::before { background: #334155; }
-        .timeline-item:last-child::before { bottom: 0; }
-        .timeline-dot {
-            position: absolute; left: -0.35rem; top: 0.25rem;
-            width: 0.85rem; height: 0.85rem; border-radius: 50%;
-            background: #14b8a6; box-shadow: 0 0 0 4px rgba(20,184,166,0.2);
-            transition: all 0.3s ease;
-        }
-        .timeline-item:hover .timeline-dot { transform: scale(1.3); box-shadow: 0 0 0 6px rgba(20,184,166,0.3); }
+  /* Hero photo — "resolve" signature: image sharpens from a blurred, scan-swept state */
+  .resolve-frame{
+    position:relative;overflow:hidden;border:1px solid var(--line-dark);
+    background:var(--ink-2);
+  }
+  .resolve-frame img{
+    width:100%;height:100%;object-fit:cover;object-position:top center;
+    filter:blur(14px) saturate(0.7) contrast(1.05);
+    animation:resolveImg 2.6s steps(7,end) 0.3s forwards;
+  }
+  @keyframes resolveImg{
+    to{filter:blur(0px) saturate(1) contrast(1);}
+  }
+  .resolve-frame::after{
+    content:"";position:absolute;left:0;right:0;top:-20%;height:35%;
+    background:linear-gradient(to bottom, transparent, rgba(47,79,224,0.35), transparent);
+    animation:scanSweep 2.6s ease-in-out 0.3s 1;
+  }
+  @keyframes scanSweep{
+    0%{top:-20%;}
+    100%{top:105%;}
+  }
+  .resolve-frame .grid-overlay{
+    position:absolute;inset:0;
+    background-image:linear-gradient(rgba(246,242,233,0.06) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(246,242,233,0.06) 1px, transparent 1px);
+    background-size:12.5% 12.5%;
+    opacity:0.9;animation:gridFade 2.6s ease-out 0.3s forwards;
+  }
+  @keyframes gridFade{to{opacity:0;}}
 
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5,0,0,1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.active{opacity:1;transform:translateY(0);}
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #475569; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  ::selection{background:var(--signal);color:var(--paper);}
 
-        /* Institute badge */
-        .institute-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 6px 14px; border-radius: 999px;
-            font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em;
-            border: 1.5px solid;
-        }
-        .badge-iitb {
-            background: linear-gradient(135deg, #003d7a15, #0072ce15);
-            border-color: #0072ce50; color: #0072ce;
-        }
-        .dark .badge-iitb { color: #60a5fa; border-color: #3b82f680; background: rgba(59,130,246,0.1); }
-        .badge-iitr {
-            background: linear-gradient(135deg, #7c3aed15, #9333ea15);
-            border-color: #9333ea50; color: #7c3aed;
-        }
-        .dark .badge-iitr { color: #c084fc; border-color: #a855f780; background: rgba(168,85,247,0.1); }
-        .badge-nith {
-            background: linear-gradient(135deg, #d9770015, #f9731615);
-            border-color: #f9731650; color: #c2410c;
-        }
-        .dark .badge-nith { color: #fb923c; border-color: #f9731680; background: rgba(249,115,22,0.1); }
-
-        /* Impact factor pill */
-        .if-pill {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 2px 8px; border-radius: 999px; font-size: 0.7rem; font-weight: 700;
-            background: #dcfce7; color: #166534; border: 1px solid #bbf7d0;
-        }
-        .dark .if-pill { background: rgba(22,163,74,0.15); color: #4ade80; border-color: rgba(74,222,128,0.3); }
-
-        .q1-pill {
-            display: inline-flex; align-items: center; gap: 4px;
-            padding: 2px 8px; border-radius: 999px; font-size: 0.7rem; font-weight: 700;
-            background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe;
-        }
-        .dark .q1-pill { background: rgba(59,130,246,0.15); color: #93c5fd; border-color: rgba(147,197,253,0.3); }
-    </style>
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-track{background:var(--paper);}
+  ::-webkit-scrollbar-thumb{background:var(--line);}
+  ::-webkit-scrollbar-thumb:hover{background:var(--signal);}
+</style>
 </head>
-<body class="antialiased selection:bg-brand-200 selection:text-brand-900 dark:selection:bg-brand-900 dark:selection:text-brand-100">
+<body class="antialiased">
 
-    <div class="bg-grid"></div>
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-300/30 dark:bg-brand-900/40 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
-        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-blue-300/30 dark:bg-blue-900/40 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob" style="animation-delay:2s"></div>
-        <div class="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-purple-300/30 dark:bg-purple-900/40 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-70 animate-blob" style="animation-delay:4s"></div>
+<!-- NAV -->
+<header class="fixed top-0 w-full z-50 border-b" style="background:rgba(246,242,233,0.9);backdrop-filter:blur(10px);border-color:var(--line);">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="#hero" class="font-display font-semibold text-lg tracking-tight">Inderjeet<span style="color:var(--signal)">.</span></a>
+      <nav class="hidden lg:flex items-center gap-6 font-mono text-xs uppercase tracking-wider">
+        <a href="#about" class="hover:text-[var(--signal)]">About</a>
+        <a href="#experience" class="hover:text-[var(--signal)]">Experience</a>
+        <a href="#publications" class="hover:text-[var(--signal)]">Publications</a>
+        <a href="#mentorship" class="hover:text-[var(--signal)]">Mentorship</a>
+        <a href="#skills" class="hover:text-[var(--signal)]">Skills</a>
+        <a href="#awards" class="hover:text-[var(--signal)]">Awards</a>
+        <a href="#references" class="hover:text-[var(--signal)]">References</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex btn-primary px-4 py-2">Contact</a>
+        <button id="mobile-menu-btn" class="lg:hidden p-2" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t px-5 py-4 flex flex-col gap-3 font-mono text-sm uppercase tracking-wide" style="border-color:var(--line);background:var(--paper);">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#mentorship">Mentorship</a>
+    <a href="#skills">Skills</a>
+    <a href="#awards">Awards</a>
+    <a href="#references">References</a>
+    <a href="#contact" style="color:var(--signal)">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="pt-32 pb-20" style="background:var(--ink);color:var(--paper);">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-14 items-center">
+      <div>
+        <p class="eyebrow mb-5">Electrical Engineering · IIT Bombay</p>
+        <h1 class="font-display font-semibold text-5xl sm:text-6xl leading-[1.05] mb-6">
+          Inderjeet, PhD
+        </h1>
+        <p class="font-mono text-sm leading-relaxed mb-8" style="color:#9aa0b3;max-width:42ch;">
+          Institute Post-Doctoral Fellow, Dept. of Electrical Engineering, IIT Bombay — working with Prof. Vikram M. Gadre on the ANRF-PAIR IITB Hub &amp; Spoke initiative. Research: computer vision, deep learning, image restoration/enhancement, contactless biometrics.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <a href="https://scholar.google.com/citations?user=CAypreAAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-primary px-5 py-2.5 inline-flex items-center gap-2">Google Scholar ↗</a>
+          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">Scopus ↗</a>
+          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">Semantic Scholar ↗</a>
+          <a href="https://www.linkedin.com/in/inderjeet-8270b8264/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">LinkedIn ↗</a>
+        </div>
+        <div class="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs" style="color:#9aa0b3;">
+          <span>inderjeet30642@gmail.com</span>
+          <span>+91-7018707830</span>
+        </div>
+      </div>
+
+      <div class="relative mx-auto lg:mx-0">
+        <div class="resolve-frame w-64 h-64 sm:w-80 sm:h-80 rounded-sm">
+          <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=CAypreAAAAAJ&citpid=5"
+               alt="Inderjeet"
+               onerror="this.src='https://ui-avatars.com/api/?name=Inderjeet&background=12141c&color=f6f2e9&size=512'">
+          <div class="grid-overlay"></div>
+        </div>
+        <div class="absolute -bottom-5 -left-5 sm:-left-8 px-4 py-3 font-mono text-xs" style="background:var(--paper);color:var(--ink);border:1px solid var(--line);">
+          <p style="color:var(--ink-soft)">Focus</p>
+          <p class="font-semibold">Super-Resolution · Biometrics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">About</p>
+  <div class="grid md:grid-cols-[0.9fr_1.6fr] gap-10 reveal">
+    <h2 class="font-display font-semibold text-3xl leading-tight">Research<br>profile</h2>
+    <div class="font-serif text-lg leading-relaxed space-y-5" style="color:#2b2e38;">
+      <p>I am a <strong>Post-Doctoral Fellow</strong> in the Department of Electrical Engineering at <strong>IIT Bombay</strong>, working under the supervision of <strong>Prof. Vikram M. Gadre</strong>. I also contribute to the <strong>ANRF-PAIR IITB Hub &amp; Spokes</strong> initiative, facilitating high-impact collaborative research and outreach.</p>
+      <p>My primary research interests span digital signal and image processing, deep learning, image restoration and enhancement, and biometrics. With a foundation in signal processing from my undergraduate studies, I moved into visual computing to explore how machines can perceive, reconstruct, and enhance visual data.</p>
+      <p>I design intelligent systems for real-world problems — high-quality image reconstruction, restoration of degraded images, and contactless biometric recognition — sitting at the intersection of deep neural networks and classical image processing.</p>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
+
+<!-- EXPERIENCE & EDUCATION -->
+<section id="experience" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">Experience &amp; Education</p>
+  <div class="grid lg:grid-cols-2 gap-16">
+
+    <div class="reveal">
+      <h2 class="font-display font-semibold text-2xl mb-8">Experience</h2>
+      <div class="rail">
+
+        <div class="rail-item">
+          <div class="rail-dot"></div>
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
+              <span class="pill pill-status-pub">Apr 2026 – Present</span>
+              <span style="color:var(--ink-soft)">IIT Bombay</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg mb-1">Institute Post-Doctoral Fellow (IPDF)</h3>
+            <p class="text-sm mb-3" style="color:var(--ink-soft)">Dept. of Electrical Engineering · ANRF-PAIR IITB Hub–Spoke Project</p>
+            <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
+              <li>Advanced computer vision &amp; deep learning for contactless biometric recognition — finger-photo, palmprint, and latent fingerprint.</li>
+              <li>Co-advising PhD, M.Tech. and B.Tech. students on research development and thesis execution.</li>
+              <li>Supervisor: <strong>Prof. Vikram M. Gadre</strong>, EED, IIT Bombay.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rail-item">
+          <div class="rail-dot"></div>
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
+              <span class="pill pill-status-acc">Jan 2026 – Apr 2026</span>
+              <span style="color:var(--ink-soft)">IIT Bombay</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg mb-1">Senior Project Associate</h3>
+            <p class="text-sm mb-3" style="color:var(--ink-soft)">ANRF-PAIR IITB Hub-Spokes Project, EED</p>
+            <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
+              <li>Designed CV &amp; deep learning frameworks for contactless biometric recognition (finger-photo, palmprint).</li>
+              <li>Managed end-to-end algorithmic experimentation, benchmarking, and joint academic–industrial R&amp;D.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rail-item">
+          <div class="rail-dot"></div>
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
+              <span class="pill" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">Jan 2021 – Jan 2026</span>
+              <span style="color:var(--ink-soft)">IIT Ropar</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg mb-1">PhD Researcher</h3>
+            <p class="text-sm mb-1" style="color:var(--ink-soft)">Dept. of Electrical Engineering</p>
+            <p class="font-mono text-xs italic mb-3" style="color:var(--ink-soft)">Thesis: Deep Learning-based Approaches for Single-Image Super-Resolution</p>
+            <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
+              <li>Built deep learning frameworks for SISR: hierarchical feature utilization, edge-guided reconstruction, lightweight architectures.</li>
+              <li>Guided student projects in dehazing, underwater restoration, inpainting, and low-light enhancement.</li>
+              <li>Coursework: Machine Learning, Digital Image Processing, Digital Signal Processing, Graph Theory.</li>
+              <li>Supervisor: <strong>Prof. J. S. Sahambi</strong>, EED, IIT Ropar.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rail-item">
+          <div class="rail-dot"></div>
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
+              <span class="pill" style="background:#fdece9;color:#b3492f;border-color:#f4cbc0;">Jan 2019 – Jun 2020</span>
+              <span style="color:var(--ink-soft)">NIT Hamirpur</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg mb-1">M.Tech Researcher</h3>
+            <p class="font-mono text-xs italic mb-3" style="color:var(--ink-soft)">Thesis: Design of a Lower-Order IIR Filter from a Higher-Order FIR</p>
+            <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
+              <li>Automated filter approximation framework using Particle Swarm Optimization to derive IIR transfer functions via coefficient estimation and root-polynomial formulation.</li>
+              <li>Integrated the Bisection method to dynamically determine minimal IIR filter order, reducing hardware complexity, arithmetic operations, storage, and propagation delay.</li>
+              <li>Evaluated MSE, H² norm, H∞ norm, and L1 norm; established MSE as the ideal baseline for phase linearity and stability.</li>
+              <li>Supervisor: <strong>Dr. Aman Kumar</strong>, ECE Dept., NIT Hamirpur.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Navigation -->
-    <header class="fixed top-0 w-full z-50 glass transition-all duration-300 border-b">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-400 to-blue-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">I</div>
-                    <div class="hidden sm:block">
-                        <span class="font-bold text-xl tracking-tight">Inderjeet</span>
-                        <div class="text-xs text-gray-500 dark:text-gray-400 font-medium">Post-Doc Fellow · IIT Bombay</div>
-                    </div>
-                </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400">About</a>
-                    <a href="#experience" class="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400">Experience</a>
-                    <a href="#publications" class="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400">Publications</a>
-                    <a href="#mentorship" class="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400">Mentorship</a>
-                    <a href="#skills" class="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400">Skills</a>
-                    <a href="#awards" class="nav-link font-medium text-gray-700 dark:text-gray-300 hover:text-brand-600 dark:hover:text-brand-400">Awards</a>
-                </nav>
-                <div class="flex items-center gap-4">
-                    <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-medium text-white transition-all bg-gray-900 rounded-full hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 hover:shadow-lg">Contact Me</a>
-                    <button id="theme-toggle" class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-sm" aria-label="Toggle Dark Mode">
-                        <i class="fa-solid fa-moon text-lg" id="theme-icon-dark"></i>
-                        <i class="fa-solid fa-sun text-lg hidden" id="theme-icon-light"></i>
-                    </button>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 dark:text-gray-300">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+    <div class="reveal">
+      <h2 class="font-display font-semibold text-2xl mb-8">Education</h2>
+      <div class="rail">
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:#7a4c96;"></div>
+          <div class="card p-6">
+            <span class="pill mb-2 inline-block" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">2020 – 2026</span>
+            <h3 class="font-display font-semibold text-base mb-1">Ph.D., Electrical Engineering</h3>
+            <p class="text-sm" style="color:var(--ink-soft)">IIT Ropar · CGPA 8.0/10</p>
+          </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-gray-200 dark:border-gray-800">
-            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-                <a href="#about" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Experience</a>
-                <a href="#publications" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Publications</a>
-                <a href="#mentorship" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Mentorship</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a>
-                <a href="#awards" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">Awards</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md font-medium text-brand-600 dark:text-brand-400 hover:bg-gray-100 dark:hover:bg-gray-800">Contact Me</a>
-            </div>
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:#7a4c96;"></div>
+          <div class="card p-6">
+            <span class="pill mb-2 inline-block" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">2018 – 2020</span>
+            <h3 class="font-display font-semibold text-base mb-1 leading-snug">M.Tech., Electronics &amp; Communication Engineering</h3>
+            <p class="text-sm" style="color:var(--ink-soft)">NIT Hamirpur · CGPA 8.5/10</p>
+          </div>
         </div>
-    </header>
-
-    <main class="pt-28 pb-16">
-
-        <!-- Hero -->
-        <section id="hero" class="min-h-[85vh] flex items-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-10">
-            <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 w-full">
-                <div class="flex-1 space-y-6 reveal text-center lg:text-left">
-                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
-                        Hi, I'm <br class="hidden lg:block" />
-                        <span class="text-gradient">Inderjeet</span>
-                    </h1>
-                    <h2 class="text-xl sm:text-2xl font-serif text-gray-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                        Post-Doctoral Fellow · Department of Electrical Engineering
-                    </h2>
-
-                    <!-- IIT Bombay prominent badge -->
-                    <div class="flex justify-center lg:justify-start">
-                        <div class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl border-2 border-blue-600/40 dark:border-blue-400/40 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/40 dark:to-indigo-950/40 shadow-md">
-                            <div class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center shadow-lg">
-                                <span class="text-white font-black text-sm">IIT</span>
-                            </div>
-                            <div class="text-left">
-                                <div class="font-extrabold text-blue-800 dark:text-blue-300 text-lg leading-tight">IIT Bombay</div>
-                                <div class="text-xs text-blue-600/70 dark:text-blue-400/70 font-medium">Indian Institute of Technology Bombay</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Dedicated researcher specializing in <span class="font-semibold text-gray-800 dark:text-gray-200">Computer Vision, Deep Learning, Image Enhancement/Restoration,</span> and <span class="font-semibold text-gray-800 dark:text-gray-200">Image Processing</span>. Driving innovation in Image Super-Resolution and Contactless Biometrics.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
-                        <a href="https://scholar.google.com/citations?user=CAypreAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"
-                           class="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 text-base font-medium text-white transition-all bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1 overflow-hidden">
-                            <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                            <i class="fa-solid fa-graduation-cap relative z-10 text-xl"></i>
-                            <span class="relative z-10">Google Scholar</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/inderjeet-8270b8264/" target="_blank" rel="noopener noreferrer"
-                           class="group inline-flex items-center justify-center gap-3 px-8 py-3.5 text-base font-medium text-gray-700 dark:text-gray-200 transition-all bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-500 hover:-translate-y-1">
-                            <i class="fa-brands fa-linkedin text-[#0A66C2] dark:text-[#3b82f6] text-xl"></i>
-                            <span>LinkedIn Profile</span>
-                            <i class="fa-solid fa-arrow-right opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="flex-1 relative reveal delay-200 flex justify-center lg:justify-end">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-400 to-blue-500 rounded-[2rem] lg:rounded-[3rem] blur-2xl opacity-20 dark:opacity-40 animate-pulse"></div>
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl animate-float z-10 bg-white dark:bg-gray-800">
-                        <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=CAypreAAAAAJ&citpid=5"
-                            alt="Inderjeet - Research Scholar"
-                            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
-                            onerror="this.src='https://ui-avatars.com/api/?name=Inderjeet&background=0d9488&color=fff&size=512'">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 sm:bottom-10 sm:-left-10 glass px-5 py-3 rounded-2xl shadow-xl border border-white/50 dark:border-gray-700/50 z-20 animate-float" style="animation-delay:-3s">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center text-brand-600 dark:text-brand-400">
-                                <i class="fa-solid fa-fingerprint text-lg"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Focus Area</p>
-                                <p class="font-bold text-gray-900 dark:text-white text-sm">Computer Vision & Biometrics</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce opacity-50 hidden md:block">
-                <i class="fa-solid fa-arrow-down text-gray-500 dark:text-gray-400 text-xl"></i>
-            </div>
-        </section>
-
-        <div class="max-w-6xl mx-auto px-4 my-16"><hr class="border-gray-200 dark:border-gray-800"></div>
-
-        <!-- About -->
-        <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
-                <div class="w-20 h-1.5 bg-brand-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="glass-card rounded-3xl p-8 md:p-12 reveal delay-100 relative overflow-hidden">
-                <i class="fa-solid fa-quote-left absolute top-8 right-8 text-6xl text-gray-100 dark:text-gray-800 opacity-50 z-0"></i>
-                <div class="relative z-10 space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
-                    <p>
-                        I am a <strong class="text-brand-600 dark:text-brand-400 font-sans">Post-Doctoral Fellow</strong> in the Department of Electrical Engineering at
-                        <strong class="text-blue-700 dark:text-blue-300 font-sans">IIT Bombay</strong>, working under the supervision of
-                        <strong class="font-sans text-gray-900 dark:text-gray-100">Prof. Vikram M. Gadre</strong>. I also contribute to the
-                        <strong class="font-sans text-gray-900 dark:text-gray-100">ANRF-PAIR IITB Hub &amp; Spoke</strong> initiative, facilitating high-impact collaborative research and inovations. My primary research interests include
-                        <strong class="font-sans text-gray-900 dark:text-gray-100">Computer Vision</strong>, <strong class="font-sans text-gray-900 dark:text-gray-100">Deep Learning</strong>, <strong class="font-sans text-gray-900 dark:text-gray-100">Image Restoration/Enhancement</strong>, and <strong class="font-sans text-gray-900 dark:text-gray-100">Biometrics</strong>.
-                    </p>
-                    <p>
-                        With a foundation in <strong class="font-sans text-gray-900 dark:text-gray-100">Signal Processing</strong> from my undergraduate studies, I transitioned into advanced areas of visual computing to explore how machines can perceive, reconstruct, and enhance visual data. My work lies at the intersection of deep neural networks and image processing, where I develop computational models capable of recovering and interpreting complex visual information.
-                    </p>
-                    <p>
-                        I aim to design intelligent systems that address challenging real-world problems, including high-quality image reconstruction, restoration of degraded images, and contactless biometric recognition.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience & Education -->
-        <section id="experience" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-            <div class="grid lg:grid-cols-2 gap-16">
-
-                <!-- Experience -->
-                <div class="reveal">
-                    <div class="flex items-center gap-4 mb-10">
-                        <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                            <i class="fa-solid fa-briefcase text-xl"></i>
-                        </div>
-                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Experience</h2>
-                    </div>
-                    <div class="pl-4 space-y-6">
-
-                        <!-- IPDF -->
-                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                            <div class="flex flex-wrap items-center gap-2 mb-3">
-                                <span class="inline-block px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 text-xs font-bold tracking-wide uppercase">Apr 2026 – Present</span>
-                                <span class="institute-badge badge-iitb"><i class="fa-solid fa-building-columns"></i>IIT Bombay</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Institute Post-Doctoral Fellow (IPDF)</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Department of Electrical Engineering · ANRF-PAIR IITB Hub–Spoke Project</p>
-                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
-                                <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Advanced computer vision &amp; deep learning for <strong class="ml-1">contactless biometrics</strong> (finger-photo, palmprint, latent fingerprint)</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Co-advising PhD, M.Tech., and B.Tech. students on core research development &amp; thesis execution</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Industrial collaboration: UIDAI and SAMEER for ANRF-PAIR IITB Hub Spoke Project</li>
-                                <li class="flex items-start"><i class="fa-solid fa-user text-blue-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Supervisor: <strong>Prof. Vikram M. Gadre</strong>, EED, IIT Bombay</li>
-                            </ul>
-                        </div>
-
-                        <!-- SPA -->
-                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                            <div class="flex flex-wrap items-center gap-2 mb-3">
-                                <span class="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs font-bold tracking-wide uppercase">Jan 2026 – Apr 2026</span>
-                                <span class="institute-badge badge-iitb"><i class="fa-solid fa-building-columns"></i>IIT Bombay</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Senior Project Associate</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Department of Electrical Engineering · ANRF-PAIR IITB Hub–Spokes</p>
-                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Computer vision &amp; deep learning framework designs for contactless biometric recognition (finger-photo &amp; palmprint)</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-500 mt-1 mr-3 text-xs flex-shrink-0"></i>End-to-end algorithmic experimentation, performance benchmarking, and joint academic-industrial R&amp;D</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-blue-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Industrial collaboration with UIDAI and SAMEER</li>
-                            </ul>
-                        </div>
-
-                        <!-- PhD Research -->
-                        <div class="glass-card p-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all">
-                            <div class="flex flex-wrap items-center gap-2 mb-3">
-                                <span class="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold tracking-wide uppercase">Jan 2021 – Jan 2026</span>
-                                <span class="institute-badge badge-iitr"><i class="fa-solid fa-building-columns"></i>IIT Ropar</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">PhD Researcher</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Department of Electrical Engineering</p>
-                            <p class="text-xs text-gray-400 dark:text-gray-500 mb-4 italic">Thesis: Deep Learning-based Approaches for Single-Image Super-Resolution</p>
-                            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
-                                <li class="flex items-start"><i class="fa-solid fa-check text-purple-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Developed advanced deep learning frameworks for SISR with hierarchical feature utilization &amp; edge-guided reconstruction</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-purple-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Applied CNNs, Vision Transformers, GANs, VAEs, DDPMs, and State-Space Models</li>
-                                <li class="flex items-start"><i class="fa-solid fa-check text-purple-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Guided students in dehazing, underwater restoration, inpainting, and low-light enhancement</li>
-                                <li class="flex items-start"><i class="fa-solid fa-user text-purple-500 mt-1 mr-3 text-xs flex-shrink-0"></i>Supervisor: <strong>Prof. J. S. Sahambi</strong>, EED, IIT Ropar</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="reveal delay-100">
-                    <div class="flex items-center gap-4 mb-10">
-                        <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
-                            <i class="fa-solid fa-user-graduate text-xl"></i>
-                        </div>
-                        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Education</h2>
-                    </div>
-                    <div class="pl-4">
-                        <!-- PhD -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot" style="background:#9333ea;box-shadow:0 0 0 4px rgba(147,51,234,0.2)"></div>
-                            <div class="glass-card p-6 rounded-2xl">
-                                <div class="flex flex-wrap items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold tracking-wide uppercase">2020 – 2026</span>
-                                    <span class="institute-badge badge-iitr"><i class="fa-solid fa-building-columns"></i>IIT Ropar</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Ph.D. in Electrical Engineering</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm">CGPA: 8.0/10</p>
-                            </div>
-                        </div>
-                        <!-- MTech -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot" style="background:#9333ea;box-shadow:0 0 0 4px rgba(147,51,234,0.2)"></div>
-                            <div class="glass-card p-6 rounded-2xl">
-                                <div class="flex flex-wrap items-center gap-2 mb-3">
-                                    <span class="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold tracking-wide uppercase">2018 – 2020</span>
-                                    <span class="institute-badge badge-nith"><i class="fa-solid fa-building-columns"></i>NIT Hamirpur</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1 leading-snug">M.Tech. in Communication Systems &amp; Networks, ECE</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm">CGPA: 8.5/10</p>
-                            </div>
-                        </div>
-                        <!-- BTech -->
-                        <div class="timeline-item">
-                            <div class="timeline-dot" style="background:#9333ea;box-shadow:0 0 0 4px rgba(147,51,234,0.2)"></div>
-                            <div class="glass-card p-6 rounded-2xl">
-                                <span class="inline-block px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 text-xs font-bold mb-3 tracking-wide uppercase">2013 – 2017</span>
-                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1 leading-snug">B.Tech. in Electronics &amp; Communication Engineering</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm">JNGEC, Sundernagar · HPTU · Aggregate: 72%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Interests -->
-        <section id="research" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Research Interests</h2>
-                <div class="w-16 h-1 bg-brand-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal delay-100">
-                <div class="glass-card p-6 rounded-2xl text-center group">
-                    <div class="w-16 h-16 mx-auto bg-teal-100 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-network-wired text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Deep Learning &amp; CV</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Digital Image Processing, Computer Vision, and Deep Learning architectures.</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-regular fa-image text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Super-Resolution</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Image Super-Resolution and advanced Low-Level Vision techniques.</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl text-center group">
-                    <div class="w-16 h-16 mx-auto bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Image Restoration</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Dehazing, Deraining, and Low-light image Enhancement models.</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl text-center group">
-                    <div class="w-16 h-16 mx-auto bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-fingerprint text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Contactless Biometrics</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Computer Vision applications in modern Contactless Biometrics.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications -->
-        <section id="publications" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 reveal">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Publications</h2>
-                    <div class="w-16 h-1 bg-brand-500 rounded-full"></div>
-                </div>
-                <a href="https://scholar.google.com/citations?user=CAypreAAAAAJ&hl=en" target="_blank" class="mt-4 md:mt-0 text-brand-600 dark:text-brand-400 hover:text-brand-700 font-medium inline-flex items-center gap-2 transition-colors">
-                    Full profile on Google Scholar <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-                </a>
-            </div>
-
-            <div class="space-y-12">
-                <!-- Journals -->
-                <div class="reveal delay-100">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-book-journal-whills text-brand-500"></i> Journal Papers
-                    </h3>
-                    <div class="space-y-4">
-
-                        <!-- J1 -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-brand-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pr-12 text-sm md:text-base">
-                                [J1] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "CMOA-Net: Competent Multi-Observant Attention Network for Single-Image Super-Resolution," <em class="text-brand-600 dark:text-brand-400">IEEE Transactions on Emerging Topics in Computational Intelligence</em>, vol. 9, no. 6, pp. 3881–3894, Dec. 2025.
-                            </p>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="if-pill"><i class="fa-solid fa-chart-line text-xs"></i> IF: 6.5</span>
-                                <span class="q1-pill">Q1</span>
-                                <span class="if-pill" style="background:#fef9c3;color:#854d0e;border-color:#fef08a">H-Index: 52</span>
-                            </div>
-                            <a href="https://ieeexplore.ieee.org/document/11033188/" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <!-- J2 -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-brand-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pr-12 text-sm md:text-base">
-                                [J2] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "RMRDN: Recurrent Multi-receptive Residual Dense Network for Image Super-Resolution," <em class="text-brand-600 dark:text-brand-400">Digital Signal Processing</em>, vol. 168, p. 105556, 2026.
-                            </p>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="if-pill"><i class="fa-solid fa-chart-line text-xs"></i> IF: 3.0</span>
-                                <span class="q1-pill" style="background:#f0fdf4;color:#166534;border-color:#bbf7d0;dark:background:rgba(22,163,74,0.15)">Q2</span>
-                                <span class="if-pill" style="background:#fef9c3;color:#854d0e;border-color:#fef08a">H-Index: 96</span>
-                            </div>
-                            <a href="https://www.sciencedirect.com/science/article/pii/S1051200425005780" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <!-- J3 -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-brand-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pr-12 text-sm md:text-base">
-                                [J3] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "MDTN: Multi-scale Dense Transformer Network for single-image super-resolution," <em class="text-brand-600 dark:text-brand-400">Image and Vision Computing</em>, vol. 164, 2025, p. 105779.
-                            </p>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="if-pill"><i class="fa-solid fa-chart-line text-xs"></i> IF: 4.2</span>
-                                <span class="q1-pill">Q1</span>
-                                <span class="if-pill" style="background:#fef9c3;color:#854d0e;border-color:#fef08a">H-Index: 150</span>
-                            </div>
-                            <a href="https://doi.org/10.1016/j.imavis.2025.105779" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <!-- J4 -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-brand-500 relative">
-                            <span class="absolute -top-3 left-6 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Published</span>
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pr-12 text-sm md:text-base">
-                                [J4] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "Image Super-Resolution Method Based on Edge-Aware Detail-Preserving Network," <em class="text-brand-600 dark:text-brand-400">IEEE Transactions on Emerging Topics in Computational Intelligence</em>, doi: 10.1109/TETCI.2026.3683771.
-                            </p>
-                            <div class="mt-3 flex flex-wrap gap-2">
-                                <span class="if-pill"><i class="fa-solid fa-chart-line text-xs"></i> IF: 6.5</span>
-                                <span class="q1-pill">Q1</span>
-                                <span class="if-pill" style="background:#fef9c3;color:#854d0e;border-color:#fef08a">H-Index: 52</span>
-                            </div>
-                        </div>
-
-                        <!-- J5 Under Review -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-gray-300 dark:border-l-gray-600 relative">
-                            <span class="absolute -top-3 left-6 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">Under Review</span>
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                                [J5] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "Context-aware Fine-grained Processing for Image Super-Resolution," <em class="text-brand-600 dark:text-brand-400">IEEE Transactions on Emerging Topics in Computational Intelligence</em>.
-                            </p>
-                        </div>
-
-                        <!-- J6 Under Review -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-gray-300 dark:border-l-gray-600 relative">
-                            <span class="absolute -top-3 left-6 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">Under Review</span>
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                                [J6] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "SAANet: Scale Aware Attention Network for Image Super-Resolution," <em class="text-brand-600 dark:text-brand-400">IEEE Transactions on Emerging Topics in Computational Intelligence</em>.
-                            </p>
-                        </div>
-
-                     
-                        <!-- J7 Under Review -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-gray-300 dark:border-l-gray-600 relative">
-                            <span class="absolute -top-3 left-6 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">Under Review</span>
-                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                                [J7] A. Bharadwaj, <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "Low Light Image Enhancement via Multi-Branch Transformer-based Network," <em class="text-brand-600 dark:text-brand-400">Digital Signal Processing</em>.
-                            </p>
-                        </div>
-
-           
-
-                    </div>
-                </div>
-
-                <!-- Conferences -->
-                <div class="reveal delay-200">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-users-rectangle text-blue-500"></i> Conference Papers
-                    </h3>
-                    <div class="space-y-4">
-
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed pr-12">
-                                [C1] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "GAMSRN: Global Attention Multi-Scale Residual Network for Single-Image Super-Resolution and Low-Light Enhancement," <em>NCC 2025</em>, New Delhi, pp. 1–6. doi: 10.1109/NCC63735.2025.10982884.
-                            </p>
-                            <a href="https://ieeexplore.ieee.org/abstract/document/10982884" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed pr-12">
-                                [C2] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "Residual Frequency Content Awareness Approach for Image Super Resolution," <em>NCC 2024</em>, Chennai, pp. 1–6. doi: 10.1109/NCC60321.2024.10485711.
-                            </p>
-                            <a href="https://ieeexplore.ieee.org/abstract/document/10067881" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed pr-12">
-                                [C3] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "Efficient Contextual Feature Network for Single Image Super Resolution," <em>CVIP 2023</em>, Communications in Computer and Information Science, vol. 2010, Springer, Cham. doi: 10.1007/978-3-031-58174-8_18.
-                            </p>
-                            <a href="https://link.springer.com/chapter/10.1007/978-3-031-58174-8_18" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed pr-12">
-                                [C4] <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "A Lightweight Deep Residual Attention Network for Single Image Super Resolution," <em>NCC 2023</em>, Guwahati, pp. 1–6. doi: 10.1109/NCC56989.2023.10067881.
-                            </p>
-                            <a href="https://ieeexplore.ieee.org/abstract/document/10485711" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed pr-12">
-                                [C5] <strong class="text-gray-900 dark:text-white">Inderjeet</strong>, A. Bharadwaj and J. S. Sahambi, "CDAN: Contextual Detail Awareness Network for Image Super-Resolution," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 59–65. doi: 10.1109/IoTaIS67227.2025.11282077.
-                            </p>
-                            <a href="https://ieeexplore.ieee.org/document/11282077" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed pr-12">
-                                [C6] A. Bharadwaj, <strong class="text-gray-900 dark:text-white">Inderjeet</strong> and J. S. Sahambi, "MDNet: Multi-Scale Detail-aware Network for Low-Light Image Enhancement," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 76–82. doi: 10.1109/IoTaIS67227.2025.11282085.
-                            </p>
-                            <a href="https://ieeexplore.ieee.org/document/11282085" target="_blank" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all">
-                                <i class="fa-solid fa-link text-sm"></i>
-                            </a>
-                        </div>
-
-                        <!-- C7 NEW -->
-                        <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-500 relative">
-                            <span class="absolute -top-3 left-6 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Accepted</span>
-                            <p class="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-                                [C7] Divyang, S. Dongare, <strong class="text-gray-900 dark:text-white">Inderjeet</strong>, D. Saxena, S. Pateriya and V. M. Gadre, "Scale-aware Economy-Accuracy Trade-off in Contactless Palmprint Recognition Using 14-Tap Q-Shift DTCWT and Layer-Wise Attention," <em>SPCOM 2026</em>, IISc Bengaluru, India.
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mentorship -->
-        <section id="mentorship" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Mentorship</h2>
-                <div class="w-16 h-1 bg-brand-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-8 reveal delay-100">
-
-                <!-- M.Tech Students -->
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
-                            <i class="fa-solid fa-user-graduate text-lg"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-900 dark:text-white text-lg">M.Tech. Students</h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">IIT Ropar, India</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
-                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Nishtha Saxena</p>
-                            <p class="text-xs text-brand-600 dark:text-brand-400 mb-1">Image Dehazing · May 2024 – May 2025</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Advanced deep learning for single-image dehazing using end-to-end CNN architectures.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
-                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Shandipan Paul</p>
-                            <p class="text-xs text-brand-600 dark:text-brand-400 mb-1">Image Inpainting · May 2023 – May 2024</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Deep learning models for reconstructing missing or corrupted image regions.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
-                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Golconda Sai Rakesh</p>
-                            <p class="text-xs text-brand-600 dark:text-brand-400 mb-1">Low-Light Enhancement · May 2022 – May 2023</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Zero-reference deep curve estimation for low-light image enhancement.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
-                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Harsh Raj</p>
-                            <p class="text-xs text-brand-600 dark:text-brand-400 mb-1">Super-Resolution · Aug 2021 – May 2022</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Pre-upsampling-based deep learning architectures for visual fidelity improvement.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
-                            <p class="font-semibold text-gray-900 dark:text-white text-sm">Bappy Saha Utsob</p>
-                            <p class="text-xs text-brand-600 dark:text-brand-400 mb-1">Image Deraining · Sept 2025 – Present</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Deep neural network architectures for removing rain streaks under diverse weather conditions.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- B.Tech & Others -->
-                <div class="space-y-6">
-                    <div class="glass-card p-8 rounded-2xl">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                                <i class="fa-solid fa-users text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white text-lg">B.Tech. Students</h3>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">IIT Ropar, India</p>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-start gap-3 text-sm">
-                                <i class="fa-solid fa-circle text-brand-400 text-[6px] mt-2 flex-shrink-0"></i>
-                                <div><span class="font-medium text-gray-900 dark:text-white">Ankur, Aditya Bharuntia, Challa Brahmani</span> – <span class="text-gray-500 dark:text-gray-400">Cataract Detection using CNNs</span></div>
-                            </div>
-                            <div class="flex items-start gap-3 text-sm">
-                                <i class="fa-solid fa-circle text-brand-400 text-[6px] mt-2 flex-shrink-0"></i>
-                                <div><span class="font-medium text-gray-900 dark:text-white">Ankur</span> – <span class="text-gray-500 dark:text-gray-400">Single-Image Depth Estimation using Deep Learning</span></div>
-                            </div>
-                            <div class="flex items-start gap-3 text-sm">
-                                <i class="fa-solid fa-circle text-brand-400 text-[6px] mt-2 flex-shrink-0"></i>
-                                <div><span class="font-medium text-gray-900 dark:text-white">Mihir Dalal, Saiyam Bharara, Somil Jain</span> – <span class="text-gray-500 dark:text-gray-400">Single-Image Super-Resolution using CNNs</span></div>
-                            </div>
-                            <div class="flex items-start gap-3 text-sm">
-                                <i class="fa-solid fa-circle text-brand-400 text-[6px] mt-2 flex-shrink-0"></i>
-                                <div><span class="font-medium text-gray-900 dark:text-white">Aman Choundary, Mohit Vyas, Anirudh</span> – <span class="text-gray-500 dark:text-gray-400">Multi-Plant Disease Classification Model</span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-6 rounded-2xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400">
-                                <i class="fa-solid fa-sun text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white">Summer Interns</h3>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">IIT Ropar, India</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-circle text-teal-400 text-[6px] mt-2 flex-shrink-0"></i>
-                            <div><span class="font-medium text-gray-900 dark:text-white">Piyush (IIIT Ranchi)</span> – <span class="text-gray-500 dark:text-gray-400">Image deblurring project; foundational image processing &amp; deep learning.</span></div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-6 rounded-2xl">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400">
-                                <i class="fa-solid fa-clipboard-check text-lg"></i>
-                            </div>
-                            <h3 class="font-bold text-gray-900 dark:text-white">Project Evaluator</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400"><strong class="text-gray-900 dark:text-white">Wavelets (R&amp;D)</strong> · IIT Bombay, EED · March–April 2025</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Skills & Teaching -->
-        <section id="skills" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="reveal">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400">
-                            <i class="fa-solid fa-code text-lg"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Technical Skills</h2>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="glass-card p-5 rounded-xl">
-                            <h3 class="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Programming</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Python</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">MATLAB</span>
-                            </div>
-                        </div>
-                        <div class="glass-card p-5 rounded-xl">
-                            <h3 class="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Deep Learning</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">CNNs</span>
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">RNNs</span>
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">Transformers (ViT)</span>
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">GANs</span>
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">VAEs</span>
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">Diffusion Models (DDPMs)</span>
-                                <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300 rounded-lg text-sm font-medium border border-brand-100 dark:border-brand-800">State-Space Models (SSMs)</span>
-                            </div>
-                        </div>
-                        <div class="glass-card p-5 rounded-xl">
-                            <h3 class="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Machine Learning</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium border border-blue-100 dark:border-blue-800">SVM</span>
-                                <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium border border-blue-100 dark:border-blue-800">PCA</span>
-                                <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium border border-blue-100 dark:border-blue-800">Regression</span>
-                                <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium border border-blue-100 dark:border-blue-800">ANN</span>
-                            </div>
-                        </div>
-                        <div class="glass-card p-5 rounded-xl">
-                            <h3 class="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-3">Tools &amp; Research</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">LaTeX</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">MS Office</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">draw.io</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Canva</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Data Analysis</span>
-                                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium border border-gray-200 dark:border-gray-700">Experimental Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teaching -->
-                <div class="reveal delay-100">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-10 h-10 rounded-lg bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center text-pink-600 dark:text-pink-400">
-                            <i class="fa-solid fa-chalkboard-user text-lg"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Teaching Assistantship</h2>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="glass-card p-5 rounded-xl flex items-start gap-4">
-                            <div class="mt-1.5 w-2 h-2 rounded-full bg-pink-500 shrink-0"></div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white">Signal and Systems (EE201)</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">IIT Ropar · Jul–Dec: 2022, 2023, 2024, 2025</p>
-                            </div>
-                        </div>
-                        <div class="glass-card p-5 rounded-xl flex items-start gap-4">
-                            <div class="mt-1.5 w-2 h-2 rounded-full bg-pink-500 shrink-0"></div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white">Circuit Theory (EE209)</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">IIT Ropar · Jan–May: 2023, 2024</p>
-                            </div>
-                        </div>
-                        <div class="glass-card p-5 rounded-xl flex items-start gap-4">
-                            <div class="mt-1.5 w-2 h-2 rounded-full bg-pink-500 shrink-0"></div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white">Basic Electronics Lab (GE108)</h3>
-                                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1">IIT Ropar · Jan–May: 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Awards & Achievements -->
-        <section id="awards" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Awards &amp; Achievements</h2>
-                <div class="w-16 h-1 bg-brand-500 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal delay-100">
-
-                <div class="glass-card p-6 rounded-2xl group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-award text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Institute Post-Doctoral Fellowship (IPDF)</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Awarded by <strong class="text-gray-700 dark:text-gray-300">IIT Bombay</strong> to pursue advanced research in the Department of Electrical Engineering (April 2026).</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-indian-rupee-sign text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">MHRD / MoE Doctoral Fellowship</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Prestigious national research fellowship funded by the Ministry of Education, Government of India (2021–2025).</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl group">
-                    <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-medal text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">GATE Scholarship</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Awarded by AICTE, Government of India, for academic excellence during postgraduate studies (2018–2020).</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl group">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-star text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">GATE Qualification (×4)</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Qualified GATE in EC four times (2018–2022). Best score: <strong class="text-gray-700 dark:text-gray-300">535</strong> in GATE-2020.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl group">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-rose-600 dark:text-rose-400 mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-trophy text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Mukhyamantri Protsahan Yojana</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Merit-based state scholarship by the Government of Himachal Pradesh recognizing excellence in higher engineering education.</p>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl group">
-                    <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400 mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-certificate text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">JEE Mains Cleared</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Cleared the Joint Entrance Examination (JEE) Mains 2013.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24 reveal">
-            <div class="glass-card rounded-3xl p-8 md:p-12 text-center bg-gradient-to-b from-transparent to-brand-50/50 dark:to-brand-900/10">
-                <div class="w-16 h-16 mx-auto bg-brand-100 dark:bg-brand-900/50 rounded-full flex items-center justify-center text-brand-600 dark:text-brand-400 mb-6">
-                    <i class="fa-regular fa-paper-plane text-2xl"></i>
-                </div>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Let's Connect</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-                    I am always open to discussing research collaborations, academic opportunities, or anything related to computer vision and deep learning.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                    <a href="mailto:inderjeet30642@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 font-bold text-white transition-all bg-gray-900 dark:bg-white dark:text-gray-900 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        <i class="fa-solid fa-envelope"></i>
-                        inderjeet30642@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/inderjeet-8270b8264/" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 font-bold text-gray-700 dark:text-gray-200 transition-all bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:border-brand-500 dark:hover:border-brand-500 hover:-translate-y-1">
-                        <i class="fa-brands fa-linkedin text-[#0A66C2] dark:text-[#3b82f6] text-xl"></i>
-                        LinkedIn
-                    </a>
-                </div>
-            
-    
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-200 dark:border-gray-800 py-8 text-center glass">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-center mb-3">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 dark:border-blue-800 bg-blue-50/80 dark:bg-blue-950/50">
-                    <span class="font-bold text-blue-700 dark:text-blue-300 text-sm">IIT Bombay</span>
-                    <span class="text-gray-400">·</span>
-                    <span class="text-gray-600 dark:text-gray-400 text-sm">Department of Electrical Engineering</span>
-                </div>
-            </div>
-            <p class="text-gray-500 dark:text-gray-400 font-medium">&copy; <span id="year"></span> Inderjeet. All rights reserved.</p>
-            <p class="text-sm text-gray-400 dark:text-gray-500 mt-1">Institute Post-Doctoral Fellow (IPDF) · IIT Bombay</p>
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:#7a4c96;"></div>
+          <div class="card p-6">
+            <span class="pill mb-2 inline-block" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">2013 – 2017</span>
+            <h3 class="font-display font-semibold text-base mb-1 leading-snug">B.Tech., Electronics &amp; Communication Engineering</h3>
+            <p class="text-sm" style="color:var(--ink-soft)">JNGEC, Sundernagar · HP Technical University · 72%</p>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+      <h2 class="font-display font-semibold text-2xl mt-14 mb-6">Research interests</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="card p-5">
+          <p class="font-mono text-xs mb-2" style="color:var(--signal)">01</p>
+          <h3 class="font-display font-semibold text-sm mb-1">Deep Learning &amp; CV</h3>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Digital image processing &amp; deep architectures.</p>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs mb-2" style="color:var(--signal)">02</p>
+          <h3 class="font-display font-semibold text-sm mb-1">Super-Resolution</h3>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Low-level vision, detail recovery.</p>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs mb-2" style="color:var(--signal)">03</p>
+          <h3 class="font-display font-semibold text-sm mb-1">Image Restoration</h3>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Dehazing, deraining, low-light enhancement.</p>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs mb-2" style="color:var(--signal)">04</p>
+          <h3 class="font-display font-semibold text-sm mb-1">Contactless Biometrics</h3>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Finger-photo, palmprint, latent fingerprint.</p>
+        </div>
+      </div>
+    </div>
 
-        const html = document.documentElement;
-        const themeBtn = document.getElementById('theme-toggle');
-        const iconDark = document.getElementById('theme-icon-dark');
-        const iconLight = document.getElementById('theme-icon-light');
+  </div>
+</section>
 
-        function updateIcon(isDark) {
-            if(isDark) { iconDark.classList.add('hidden'); iconLight.classList.remove('hidden'); }
-            else { iconDark.classList.remove('hidden'); iconLight.classList.add('hidden'); }
-        }
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
 
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark'); updateIcon(true);
-        } else { html.classList.remove('dark'); updateIcon(false); }
+<!-- PUBLICATIONS -->
+<section id="publications" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
+    <div>
+      <p class="eyebrow mb-3">Publications</p>
+      <h2 class="font-display font-semibold text-3xl">Journals &amp; conferences</h2>
+    </div>
+    <a href="https://scholar.google.com/citations?user=CAypreAAAAAJ&hl=en" target="_blank" class="font-mono text-sm inline-flex items-center gap-1" style="color:var(--signal)">Full profile on Google Scholar ↗</a>
+  </div>
 
-        themeBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            localStorage.theme = isDark ? 'dark' : 'light';
-            updateIcon(isDark);
-        });
+  <div class="reveal">
+    <h3 class="font-display font-semibold text-xl mb-5 flex items-center gap-2"><span class="eyebrow" style="color:var(--ink-soft)">// Journal papers</span></h3>
+    <div class="space-y-3">
 
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
+      <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J1]</span>
+        <div class="flex-1">
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "CMOA-Net: Competent Multi-Observant Attention Network for Single-Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, vol. 9, no. 6, pp. 3881–3894, Dec. 2025.</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="pill pill-if">IF 6.5</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 52</span>
+          </div>
+        </div>
+        <a href="https://ieeexplore.ieee.org/document/11033188/" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
 
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealOnScroll = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-        revealElements.forEach(el => revealOnScroll.observe(el));
+      <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J2]</span>
+        <div class="flex-1">
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "RMRDN: Recurrent Multi-receptive Residual Dense Network for Image Super-Resolution," <em>Digital Signal Processing</em>, vol. 168, p. 105556, 2026.</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="pill pill-if">IF 3.0</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 96</span>
+          </div>
+        </div>
+        <a href="https://www.sciencedirect.com/science/article/pii/S1051200425005780" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
 
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('shadow-md');
-            } else {
-                header.classList.remove('shadow-md');
-            }
-        });
-    </script>
+      <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J3]</span>
+        <div class="flex-1">
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "MDTN: Multi-scale Dense Transformer Network for single-image super-resolution," <em>Image and Vision Computing</em>, vol. 164, 2025, p. 105779.</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="pill pill-if">IF 4.2</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 150</span>
+          </div>
+        </div>
+        <a href="https://doi.org/10.1016/j.imavis.2025.105779" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J4]</span>
+        <div class="flex-1">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="pill pill-status-pub">Published</span>
+          </div>
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "Image Super-Resolution Method Based on Edge-Aware Detail-Preserving Network," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, doi: 10.1109/TETCI.2026.3683771.</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="pill pill-if">IF 6.5</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 52</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J5]</span><strong>Inderjeet</strong> and J. S. Sahambi, "Context-aware Fine-grained Processing for Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>.</p>
+      </div>
+
+      <div class="card p-5">
+        <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J6]</span><strong>Inderjeet</strong> and J. S. Sahambi, "SAANet: Scale Aware Attention Network for Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>.</p>
+      </div>
+
+      <div class="card p-5">
+        <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J7]</span><strong>Inderjeet</strong> and J. S. Sahambi, "A Holistic and Integrated Detail Network for Image Super-Resolution," <em>Image and Vision Computing</em>.</p>
+      </div>
+
+      <div class="card p-5">
+        <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J8]</span>A. Bharadwaj, <strong>Inderjeet</strong> and J. S. Sahambi, "Low Light Image Enhancement via Multi-Branch Transformer-based Network," <em>Digital Signal Processing</em>.</p>
+      </div>
+
+      <div class="card p-5">
+        <span class="pill mb-2 inline-block" style="background:#f0f0f0;color:#555;border-color:#ddd;">Under Preparation</span>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J9]</span><strong>Inderjeet</strong>, K. Kotwal and V. M. Gadre, "ELDNet: Efficient Laplacian Detail-aware Network for Finger Photo Recognition," <em>Pattern Recognition</em>.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="reveal mt-14">
+    <h3 class="font-display font-semibold text-xl mb-5"><span class="eyebrow" style="color:var(--ink-soft)">// Conference papers</span></h3>
+    <div class="space-y-3">
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C1]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "GAMSRN: Global Attention Multi-Scale Residual Network for Single-Image Super-Resolution and Low-Light Enhancement," <em>NCC 2025</em>, New Delhi, pp. 1–6. doi: 10.1109/NCC63735.2025.10982884.</p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10982884" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C2]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "Residual Frequency Content Awareness Approach for Image Super Resolution," <em>NCC 2024</em>, Chennai, pp. 1–6. doi: 10.1109/NCC60321.2024.10485711.</p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10067881" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C3]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "Efficient Contextual Feature Network for Single Image Super Resolution," <em>CVIP 2023</em>, CCIS vol. 2010, Springer, Cham. doi: 10.1007/978-3-031-58174-8_18.</p>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-58174-8_18" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C4]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "A Lightweight Deep Residual Attention Network for Single Image Super Resolution," <em>NCC 2023</em>, Guwahati, pp. 1–6. doi: 10.1109/NCC56989.2023.10067881.</p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10485711" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C5]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong>, A. Bharadwaj and J. S. Sahambi, "CDAN: Contextual Detail Awareness Network for Image Super-Resolution," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 59–65. doi: 10.1109/IoTaIS67227.2025.11282077.</p>
+        <a href="https://ieeexplore.ieee.org/document/11282077" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C6]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1">A. Bharadwaj, <strong>Inderjeet</strong> and J. S. Sahambi, "MDNet: Multi-Scale Detail-aware Network for Low-Light Image Enhancement," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 76–82. doi: 10.1109/IoTaIS67227.2025.11282085.</p>
+        <a href="https://ieeexplore.ieee.org/document/11282085" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5">
+        <span class="pill pill-status-acc mb-2 inline-block">Accepted</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[C7]</span>Divyang, S. Dongare, <strong>Inderjeet</strong>, D. Saxena, S. Pateriya and V. M. Gadre, "Scale-aware Economy-Accuracy Trade-off in Contactless Palmprint Recognition Using 14-Tap Q-Shift DTCWT and Layer-Wise Attention," <em>SPCOM 2026</em>, IISc Bengaluru, India.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
+
+<!-- MENTORSHIP -->
+<section id="mentorship" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">Mentorship</p>
+  <h2 class="font-display font-semibold text-3xl mb-10 reveal">Students &amp; interns</h2>
+
+  <div class="grid lg:grid-cols-2 gap-10">
+    <div class="reveal">
+      <h3 class="font-display font-semibold text-lg mb-4">M.Tech. Students <span class="font-mono text-xs" style="color:var(--ink-soft)">— IIT Ropar</span></h3>
+      <div class="space-y-3">
+        <div class="card p-4">
+          <p class="font-semibold text-sm">Nishtha Saxena</p>
+          <p class="font-mono text-xs mb-1" style="color:var(--signal)">Image Dehazing · May 2024 – May 2025</p>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Deep learning methods for single-image dehazing using end-to-end CNN architectures.</p>
+        </div>
+        <div class="card p-4">
+          <p class="font-semibold text-sm">Shandipan Paul</p>
+          <p class="font-mono text-xs mb-1" style="color:var(--signal)">Image Inpainting · May 2023 – May 2024</p>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Deep learning models for reconstructing missing or corrupted image regions.</p>
+        </div>
+        <div class="card p-4">
+          <p class="font-semibold text-sm">Golconda Sai Rakesh</p>
+          <p class="font-mono text-xs mb-1" style="color:var(--signal)">Low-Light Enhancement · May 2022 – May 2023</p>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Zero-reference deep curve estimation for low-light image enhancement.</p>
+        </div>
+        <div class="card p-4">
+          <p class="font-semibold text-sm">Harsh Raj</p>
+          <p class="font-mono text-xs mb-1" style="color:var(--signal)">Super-Resolution · Aug 2021 – May 2022</p>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Pre-upsampling-based deep learning architectures to improve visual fidelity.</p>
+        </div>
+        <div class="card p-4">
+          <p class="font-semibold text-sm">Bappy Saha Utsob</p>
+          <p class="font-mono text-xs mb-1" style="color:var(--signal)">Image Deraining · Sept 2025 – Present</p>
+          <p class="font-serif text-sm" style="color:var(--ink-soft)">Deep networks for removing rain streaks and restoring clean images across weather conditions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal space-y-8">
+      <div>
+        <h3 class="font-display font-semibold text-lg mb-4">B.Tech. Students <span class="font-mono text-xs" style="color:var(--ink-soft)">— IIT Ropar</span></h3>
+        <div class="card p-5 space-y-3">
+          <p class="font-serif text-sm"><strong>Ankur, Aditya Bharuntia, Challa Brahmani</strong> — <span style="color:var(--ink-soft)">Cataract Detection using CNNs; efficiency-focused, mobile deployment.</span></p>
+          <p class="font-serif text-sm"><strong>Ankur</strong> — <span style="color:var(--ink-soft)">Single-Image Depth Estimation via encoder–decoder CNN for monocular 3D scene understanding.</span></p>
+          <p class="font-serif text-sm"><strong>Mihir Dalal, Saiyam Bharara, Somil Jain</strong> — <span style="color:var(--ink-soft)">Single-Image Super-Resolution using CNNs, detail preservation.</span></p>
+          <p class="font-serif text-sm"><strong>Aman Choundary, Mohit Vyas, Anirudh</strong> — <span style="color:var(--ink-soft)">Multi-Plant Disease Classification for precision agriculture.</span></p>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-lg mb-4">Summer Interns <span class="font-mono text-xs" style="color:var(--ink-soft)">— IIT Ropar</span></h3>
+        <div class="card p-5">
+          <p class="font-serif text-sm"><strong>Piyush</strong> (IIIT Ranchi) — <span style="color:var(--ink-soft)">Foundational image processing &amp; deep learning; dataset prep, preprocessing, and implementation for an image deblurring project.</span></p>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display font-semibold text-lg mb-4">Project Evaluator</h3>
+        <div class="card p-5">
+          <p class="font-serif text-sm"><strong>Wavelets (R&amp;D)</strong> — <span style="color:var(--ink-soft)">IIT Bombay, EED · March–April 2025</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
+
+<!-- SKILLS & TEACHING -->
+<section id="skills" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <div class="grid lg:grid-cols-2 gap-16">
+    <div class="reveal">
+      <p class="eyebrow mb-3">Skills</p>
+      <h2 class="font-display font-semibold text-2xl mb-8">Technical &amp; research skills</h2>
+      <div class="space-y-4">
+        <div class="card p-5">
+          <p class="font-mono text-xs uppercase tracking-wide mb-3" style="color:var(--ink-soft)">Programming</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill">Python</span><span class="pill">MATLAB</span>
+          </div>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs uppercase tracking-wide mb-3" style="color:var(--ink-soft)">Deep Learning</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-if">CNNs</span><span class="pill pill-if">RNNs</span><span class="pill pill-if">Transformers (ViT)</span><span class="pill pill-if">GANs</span><span class="pill pill-if">VAEs</span><span class="pill pill-if">Diffusion Models (DDPMs)</span><span class="pill pill-if">State-Space Models (SSMs)</span>
+          </div>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs uppercase tracking-wide mb-3" style="color:var(--ink-soft)">Machine Learning</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill pill-q">SVM</span><span class="pill pill-q">PCA</span><span class="pill pill-q">Regression</span><span class="pill pill-q">ANN</span>
+          </div>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs uppercase tracking-wide mb-3" style="color:var(--ink-soft)">Research &amp; Analytical</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill">Literature review</span><span class="pill">Hypothesis formulation</span><span class="pill">Optimization techniques</span><span class="pill">Experimental design</span><span class="pill">Academic writing</span><span class="pill">Data analysis</span><span class="pill">Modelling &amp; simulation</span><span class="pill">Statistical evaluation</span>
+          </div>
+        </div>
+        <div class="card p-5">
+          <p class="font-mono text-xs uppercase tracking-wide mb-3" style="color:var(--ink-soft)">Tools</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill">LaTeX</span><span class="pill">MS Word</span><span class="pill">MS Excel</span><span class="pill">PowerPoint</span><span class="pill">draw.io</span><span class="pill">Canva</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <p class="eyebrow mb-3">Teaching</p>
+      <h2 class="font-display font-semibold text-2xl mb-8">Teaching assistantship</h2>
+      <div class="rail">
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:var(--copper);"></div>
+          <div class="card p-5">
+            <h3 class="font-display font-semibold">Signals and Systems (EE201)</h3>
+            <p class="font-mono text-xs mt-1" style="color:var(--ink-soft)">IIT Ropar · Jul–Dec: 2022, 2023, 2024, 2025</p>
+          </div>
+        </div>
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:var(--copper);"></div>
+          <div class="card p-5">
+            <h3 class="font-display font-semibold">Circuit Theory (EE209)</h3>
+            <p class="font-mono text-xs mt-1" style="color:var(--ink-soft)">IIT Ropar · Jan–May: 2023, 2024</p>
+          </div>
+        </div>
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:var(--copper);"></div>
+          <div class="card p-5">
+            <h3 class="font-display font-semibold">Basic Electronics Lab (GE108)</h3>
+            <p class="font-mono text-xs mt-1" style="color:var(--ink-soft)">IIT Ropar · Jan–May: 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
+
+<!-- AWARDS -->
+<section id="awards" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">Awards</p>
+  <h2 class="font-display font-semibold text-3xl mb-10 reveal">Recognition &amp; fellowships</h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2026</p>
+      <h3 class="font-display font-semibold mb-2">Institute Post-Doctoral Fellowship (IPDF)</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Awarded by IIT Bombay for advanced research in the Dept. of Electrical Engineering.</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2026</p>
+      <h3 class="font-display font-semibold mb-2">ID-Tech Roundtable, UIDAI</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Represented IIT Bombay — nominated by Prof. Gadre alongside Prof. Saravanan — at the ID-Tech Roundtables, 3 July 2026, UIDAI Centre, Bengaluru.</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2021–2026</p>
+      <h3 class="font-display font-semibold mb-2">MHRD / MoE Doctoral Fellowship</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">National research fellowship, Ministry of Education, Government of India.</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2018–2020</p>
+      <h3 class="font-display font-semibold mb-2">GATE Scholarship</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Awarded by AICTE, Government of India, for postgraduate studies.</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2018–2022</p>
+      <h3 class="font-display font-semibold mb-2">GATE Qualification (×4)</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Qualified GATE in EC four times. Best score: 545/1000 (GATE 2020).</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2021</p>
+      <h3 class="font-display font-semibold mb-2">Mukhyamantri Protsahan Yojana</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Merit-based scholarship, Government of Himachal Pradesh.</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2013</p>
+      <h3 class="font-display font-semibold mb-2">JEE Mains</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Cleared the Joint Entrance Examination Mains, 2013.</p>
+    </div>
+    <div class="card p-6 sm:col-span-2 lg:col-span-2">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2023 – 2025</p>
+      <h3 class="font-display font-semibold mb-2">Conference presentations, NCC / CVIP / IoTaIS</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Presented work at the National Conference on Communications (2023–2025, hosted at IIT Guwahati, Madras, Delhi), CVIP 2023 at IIT Jammu, and internationally at IEEE IoTaIS 2025, Bali, Indonesia.</p>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
+
+<!-- REFERENCES -->
+<section id="references" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">References</p>
+  <h2 class="font-display font-semibold text-3xl mb-10 reveal">Referees</h2>
+  <div class="grid sm:grid-cols-2 gap-5 reveal">
+    <div class="card p-6">
+      <h3 class="font-display font-semibold">Prof. Jyotindra Singh Sahambi</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Professor, Dept. of Electrical Engineering, IIT Ropar, Punjab, India</p>
+      <p class="font-mono text-xs" style="color:var(--signal)">jsahambi@iitrpr.ac.in</p>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-display font-semibold">Prof. Vikram M. Gadre</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Professor, Dept. of Electrical Engineering, IIT Bombay, Mumbai, India</p>
+      <p class="font-mono text-xs" style="color:var(--signal)">vmgadre@ee.iitb.ac.in</p>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-display font-semibold">Dr. Brijesh Kumbhani</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Assistant Professor, Dept. of Electrical Engineering, IIT Ropar, Punjab, India</p>
+      <p class="font-mono text-xs" style="color:var(--signal)">brijesh@iitrpr.ac.in</p>
+    </div>
+    <div class="card p-6">
+      <h3 class="font-display font-semibold">Dr. Aman Kumar</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Assistant Professor, Dept. of ECE, NIT Hamirpur, HP, India</p>
+      <p class="font-mono text-xs" style="color:var(--signal)">akumar@nith.ac.in</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20" style="background:var(--ink);color:var(--paper);">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="reveal">
+        <p class="eyebrow mb-3">Contact</p>
+        <h2 class="font-display font-semibold text-3xl mb-5">Let's connect</h2>
+        <p class="font-serif text-lg mb-8" style="color:#d7d3c6;">Open to research collaborations, academic opportunities, and anything in computer vision, image restoration, or biometrics.</p>
+        <div class="flex flex-col gap-3">
+          <a href="mailto:inderjeet30642@gmail.com" class="btn-primary px-5 py-3 inline-flex items-center gap-2 w-fit">inderjeet30642@gmail.com</a>
+          <a href="https://www.linkedin.com/in/inderjeet-8270b8264/" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 font-mono text-sm border w-fit" style="border-color:var(--line-dark);">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow mb-3">Personal details</p>
+        <div class="font-mono text-sm space-y-2" style="color:#c8cad6;">
+          <p><span style="color:#7d8296;">Name</span> — Inderjeet</p>
+          <p><span style="color:#7d8296;">Current status</span> — Post-Doctoral Fellow, EED, IIT Bombay</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-8 text-center border-t" style="border-color:var(--line);">
+  <p class="font-mono text-xs" style="color:var(--ink-soft)">© <span id="year"></span> Inderjeet · Institute Post-Doctoral Fellow (IPDF), IIT Bombay</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.querySelectorAll('#mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>
