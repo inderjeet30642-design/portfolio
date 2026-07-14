@@ -94,37 +94,6 @@
     border:2px solid var(--signal);background:var(--paper);border-radius:1px;transform:rotate(45deg);
   }
 
-  /* Hero photo — "resolve" signature: image sharpens from a blurred, scan-swept state */
-  .resolve-frame{
-    position:relative;overflow:hidden;border:1px solid var(--line-dark);
-    background:var(--ink-2);
-  }
-  .resolve-frame img{
-    width:100%;height:100%;object-fit:cover;object-position:top center;
-    filter:blur(14px) saturate(0.7) contrast(1.05);
-    animation:resolveImg 2.6s steps(7,end) 0.3s forwards;
-  }
-  @keyframes resolveImg{
-    to{filter:blur(0px) saturate(1) contrast(1);}
-  }
-  .resolve-frame::after{
-    content:"";position:absolute;left:0;right:0;top:-20%;height:35%;
-    background:linear-gradient(to bottom, transparent, rgba(47,79,224,0.35), transparent);
-    animation:scanSweep 2.6s ease-in-out 0.3s 1;
-  }
-  @keyframes scanSweep{
-    0%{top:-20%;}
-    100%{top:105%;}
-  }
-  .resolve-frame .grid-overlay{
-    position:absolute;inset:0;
-    background-image:linear-gradient(rgba(246,242,233,0.06) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(246,242,233,0.06) 1px, transparent 1px);
-    background-size:12.5% 12.5%;
-    opacity:0.9;animation:gridFade 2.6s ease-out 0.3s forwards;
-  }
-  @keyframes gridFade{to{opacity:0;}}
-
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
   .reveal.active{opacity:1;transform:translateY(0);}
 
@@ -175,12 +144,15 @@
 <!-- HERO -->
 <section id="hero" class="pt-32 pb-20" style="background:var(--ink);color:var(--paper);">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
-    <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-14 items-center">
+    <div class="max-w-3xl">
       <div>
         <p class="eyebrow mb-5">Electrical Engineering · IIT Bombay</p>
         <h1 class="font-display font-semibold text-5xl sm:text-6xl leading-[1.05] mb-6">
           Inderjeet, PhD
         </h1>
+        <p class="font-serif text-xl sm:text-2xl leading-snug mb-6" style="color:#d7d3c6;">
+          Post-Doctoral Fellow reconstructing what images lose — sharper detail, cleaner signal, and biometrics that work without contact.
+        </p>
         <p class="font-mono text-sm leading-relaxed mb-8" style="color:#9aa0b3;max-width:42ch;">
           Institute Post-Doctoral Fellow, Dept. of Electrical Engineering, IIT Bombay — working with Prof. Vikram M. Gadre on the ANRF-PAIR IITB Hub &amp; Spoke initiative. Research: computer vision, deep learning, image restoration/enhancement, contactless biometrics.
         </p>
@@ -194,18 +166,9 @@
           <span>inderjeet30642@gmail.com</span>
           <span>+91-7018707830</span>
         </div>
-      </div>
-
-      <div class="relative mx-auto lg:mx-0">
-        <div class="resolve-frame w-64 h-64 sm:w-80 sm:h-80 rounded-sm">
-          <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=CAypreAAAAAJ&citpid=5"
-               alt="Inderjeet"
-               onerror="this.src='https://ui-avatars.com/api/?name=Inderjeet&background=12141c&color=f6f2e9&size=512'">
-          <div class="grid-overlay"></div>
-        </div>
-        <div class="absolute -bottom-5 -left-5 sm:-left-8 px-4 py-3 font-mono text-xs" style="background:var(--paper);color:var(--ink);border:1px solid var(--line);">
-          <p style="color:var(--ink-soft)">Focus</p>
-          <p class="font-semibold">Super-Resolution · Biometrics</p>
+        <div class="inline-flex items-center gap-3 mt-8 px-4 py-3 font-mono text-xs" style="background:var(--ink-2);border:1px solid var(--line-dark);">
+          <span style="color:#9aa0b3;">Focus</span>
+          <span class="font-semibold" style="color:var(--paper);">Super-Resolution · Biometrics</span>
         </div>
       </div>
     </div>
@@ -248,6 +211,7 @@
             <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
               <li>Advanced computer vision &amp; deep learning for contactless biometric recognition — finger-photo, palmprint, and latent fingerprint.</li>
               <li>Co-advising PhD, M.Tech. and B.Tech. students on research development and thesis execution.</li>
+              <li>Industrial collaboration with UIDAI and SAMEER.</li>
               <li>Supervisor: <strong>Prof. Vikram M. Gadre</strong>, EED, IIT Bombay.</li>
             </ul>
           </div>
@@ -265,6 +229,7 @@
             <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
               <li>Designed CV &amp; deep learning frameworks for contactless biometric recognition (finger-photo, palmprint).</li>
               <li>Managed end-to-end algorithmic experimentation, benchmarking, and joint academic–industrial R&amp;D.</li>
+              <li>Interfaced with UIDAI and SAMEER to align technical deliverables with pilot deployment criteria.</li>
             </ul>
           </div>
         </div>
@@ -281,6 +246,7 @@
             <p class="font-mono text-xs italic mb-3" style="color:var(--ink-soft)">Thesis: Deep Learning-based Approaches for Single-Image Super-Resolution</p>
             <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
               <li>Built deep learning frameworks for SISR: hierarchical feature utilization, edge-guided reconstruction, lightweight architectures.</li>
+              <li>Applied CNNs, Vision Transformers, GANs, VAEs, DDPMs, and State-Space Models.</li>
               <li>Guided student projects in dehazing, underwater restoration, inpainting, and low-light enhancement.</li>
               <li>Coursework: Machine Learning, Digital Image Processing, Digital Signal Processing, Graph Theory.</li>
               <li>Supervisor: <strong>Prof. J. S. Sahambi</strong>, EED, IIT Ropar.</li>
@@ -740,6 +706,7 @@
         <p class="eyebrow mb-3">Personal details</p>
         <div class="font-mono text-sm space-y-2" style="color:#c8cad6;">
           <p><span style="color:#7d8296;">Name</span> — Inderjeet</p>
+
           <p><span style="color:#7d8296;">Current status</span> — Post-Doctoral Fellow, EED, IIT Bombay</p>
         </div>
       </div>
