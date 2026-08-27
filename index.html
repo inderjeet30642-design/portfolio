@@ -9,17 +9,21 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root{
-    --ink:#12141c;
-    --ink-2:#1b1e2a;
-    --paper:#f6f2e9;
-    --paper-2:#eee8d9;
-    --line:#d9d0bb;
-    --line-dark:rgba(246,242,233,0.12);
-    --signal:#2f4fe0;
-    --signal-soft:#e7ecff;
-    --copper:#bd6a30;
-    --copper-soft:#f5e6d6;
-    --ink-soft:#565c6d;
+    --ink:#171233;
+    --ink-2:#231a49;
+    --paper:#fdf6ec;
+    --paper-2:#fbeee0;
+    --line:#e6d2c3;
+    --line-dark:rgba(253,246,236,0.16);
+    --signal:#ff5d5d;
+    --signal-soft:#ffe3e0;
+    --copper:#1fae7a;
+    --copper-soft:#d9f5e8;
+    --ink-soft:#5b5479;
+    --violet:#7c3aed;
+    --violet-soft:#ede4ff;
+    --gold:#f0a500;
+    --gold-soft:#fff1cf;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -44,11 +48,17 @@
   section{scroll-margin-top:5.5rem;}
 
   .card{
-    background:#fffdf7;
+    background:#fffdf9;
     border:1px solid var(--line);
-    border-radius:2px;
+    border-radius:10px;
+    box-shadow:0 1px 2px rgba(23,18,51,0.04);
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
-  .card:hover{border-color:var(--signal);}
+  .card:hover{border-color:var(--signal);transform:translateY(-2px);box-shadow:0 8px 20px rgba(124,58,237,0.10);}
+
+  .hero-bg{
+    background:linear-gradient(135deg, #1b1440 0%, #3a1f6b 45%, #7c3aed 100%);
+  }
 
   .btn-primary{
     background:var(--ink);
@@ -71,16 +81,16 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
     letter-spacing:0.03em;
-    padding:2px 8px;
-    border-radius:2px;
+    padding:3px 10px;
+    border-radius:999px;
     border:1px solid var(--line);
   }
-  .pill-if{background:var(--copper-soft);color:var(--copper);border-color:#e5c8a4;}
-  .pill-q{background:var(--signal-soft);color:var(--signal);border-color:#c7d1ff;}
-  .pill-h{background:#eef2ea;color:#456136;border-color:#d3ddc9;}
-  .pill-status-pub{background:#eef2ea;color:#456136;border-color:#d3ddc9;}
-  .pill-status-rev{background:#fbf3d9;color:#8a6a11;border-color:#eddb9c;}
-  .pill-status-acc{background:var(--signal-soft);color:var(--signal);border-color:#c7d1ff;}
+  .pill-if{background:var(--gold-soft);color:#8a5a00;border-color:#f2d488;}
+  .pill-q{background:var(--violet-soft);color:var(--violet);border-color:#d9c4fb;}
+  .pill-h{background:var(--copper-soft);color:#0f7a52;border-color:#b7e9d3;}
+  .pill-status-pub{background:var(--copper-soft);color:#0f7a52;border-color:#b7e9d3;}
+  .pill-status-rev{background:var(--gold-soft);color:#8a5a00;border-color:#f2d488;}
+  .pill-status-acc{background:var(--signal-soft);color:#c8302f;border-color:#ffc2be;}
 
   .rail{position:relative;padding-left:1.75rem;}
   .rail::before{
@@ -115,6 +125,7 @@
       <nav class="hidden lg:flex items-center gap-6 font-mono text-xs uppercase tracking-wider">
         <a href="#about" class="hover:text-[var(--signal)]">About</a>
         <a href="#experience" class="hover:text-[var(--signal)]">Experience</a>
+        <a href="#projects" class="hover:text-[var(--signal)]">Projects</a>
         <a href="#publications" class="hover:text-[var(--signal)]">Publications</a>
         <a href="#mentorship" class="hover:text-[var(--signal)]">Mentorship</a>
         <a href="#skills" class="hover:text-[var(--signal)]">Skills</a>
@@ -132,6 +143,7 @@
   <div id="mobile-menu" class="hidden lg:hidden border-t px-5 py-4 flex flex-col gap-3 font-mono text-sm uppercase tracking-wide" style="border-color:var(--line);background:var(--paper);">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
     <a href="#mentorship">Mentorship</a>
     <a href="#skills">Skills</a>
@@ -142,22 +154,22 @@
 </header>
 
 <!-- HERO -->
-<section id="hero" class="pt-32 pb-20" style="background:var(--ink);color:var(--paper);">
+<section id="hero" class="pt-32 pb-20 hero-bg" style="color:var(--paper);">
   <div class="max-w-6xl mx-auto px-5 sm:px-8">
     <div class="max-w-3xl">
       <div>
         <p class="eyebrow mb-5">Department of Electrical Engineering · IIT Bombay</p>
         <h1 class="font-display font-semibold text-5xl sm:text-6xl leading-[1.05] mb-6">
-          Inderjeet, PhD
+          Dr. Inderjeet, PhD
         </h1>
 
         <p class="font-mono text-sm leading-relaxed mb-8" style="color:#9aa0b3;max-width:42ch;">
-          Institute Post-Doctoral Fellow, Department of of Electrical Engineering, IIT Bombay — working with Prof. Vikram M. Gadre on the ANRF-PAIR IITB Hub &amp; Spoke Project. Research: computer vision, deep learning, image restoration/enhancement, contactless biometrics.
+          Institute Post-Doctoral Fellow, Department of Electrical Engineering, IIT Bombay — working with Prof. Vikram M. Gadre on the ANRF-PAIR IITB Hub &amp; Spoke Project. Research: computer vision, deep learning, image restoration/enhancement, contactless biometrics.
         </p>
         <div class="flex flex-wrap gap-3 mb-8">
           <a href="https://scholar.google.com/citations?user=CAypreAAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-primary px-5 py-2.5 inline-flex items-center gap-2">Google Scholar ↗</a>
           <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">Scopus ↗</a>
-          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">Semantic Scholar ↗</a>
+          <a href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">Portfolio ↗</a>
           <a href="https://www.linkedin.com/in/inderjeet-8270b8264/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-sm border" style="border-color:var(--line-dark);color:var(--paper);">LinkedIn ↗</a>
         </div>
         <div class="flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs" style="color:#9aa0b3;">
@@ -166,7 +178,7 @@
         </div>
         <div class="inline-flex items-center gap-3 mt-8 px-4 py-3 font-mono text-xs" style="background:var(--ink-2);border:1px solid var(--line-dark);">
           <span style="color:#9aa0b3;">Focus</span>
-          <span class="font-semibold" style="color:var(--paper);">Single Image Super-Resolution · Contactless Biometric Recognitions</span>
+          <span class="font-semibold" style="color:var(--paper);">Single Image Super-Resolution · Contactless Biometric Recognition</span>
         </div>
       </div>
     </div>
@@ -176,12 +188,12 @@
 <!-- ABOUT -->
 <section id="about" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
   <p class="eyebrow mb-3 reveal">About</p>
-  <div class="grid md:grid-cols-[0.9fr_1.6fr] gap-10 reveal">
+  <div class="flex flex-col gap-6 reveal">
     <h2 class="font-display font-semibold text-3xl leading-tight">Research<br>profile</h2>
     <div class="font-serif text-lg leading-relaxed space-y-5" style="color:#2b2e38;">
-      <p>I am a <strong>Post-Doctoral Fellow</strong> in the Department of Electrical Engineering at <strong>IIT Bombay</strong>, working under the supervision of <strong>Prof. Vikram M. Gadre</strong>. I also contribute to the <strong>ANRF-PAIR IITB Hub &amp; Spoke</strong> initiative, facilitating high-impact collaborative research and outreach.</p>
-      <p>My primary research interests span digital signal and image processing, deep learning, image restoration and enhancement, and contactless biometrics. With a foundation in signal processing from my undergraduate studies, I moved into visual computing to explore how machines can perceive, reconstruct, and enhance visual data.</p>
-      <p>I design intelligent systems for real-world problems — high-quality image reconstruction, restoration of degraded images, and contactless biometric recognition — sitting at the intersection of deep neural networks and classical image processing.</p>
+      <p>I am a <strong>Post-Doctoral Fellow</strong> in the Department of Electrical Engineering at <strong>IIT Bombay</strong>, working under the supervision of <strong>Prof. Vikram M. Gadre</strong>. I also contribute to the <strong>ANRF-PAIR IITB Hub &amp; Spoke</strong> initiative, spearheading collaborative research, technical seminars, workshops, and outreach programs.</p>
+      <p>My primary research interests span digital signal and image processing, deep learning, image restoration and enhancement, and contactless biometrics. With a foundation in signal processing from my undergraduate and postgraduate studies, I moved into visual computing to explore how machines can perceive, reconstruct, and enhance visual data.</p>
+      <p>I design intelligent systems for real-world problems — high-quality image reconstruction, restoration of degraded images, and contactless biometric recognition — sitting at the intersection of deep neural networks and classical image and signal processing.</p>
     </div>
   </div>
 </section>
@@ -191,7 +203,7 @@
 <!-- EXPERIENCE & EDUCATION -->
 <section id="experience" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
   <p class="eyebrow mb-3 reveal">Experience &amp; Education</p>
-  <div class="grid lg:grid-cols-2 gap-16">
+  <div class="flex flex-col gap-16">
 
     <div class="reveal">
       <h2 class="font-display font-semibold text-2xl mb-8">Experience</h2>
@@ -201,14 +213,14 @@
           <div class="rail-dot"></div>
           <div class="card p-6">
             <div class="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
-              <span class="pill pill-status-pub">Apr 2026 – Present</span>
+              <span class="pill pill-status-pub">April 2026 – Present</span>
               <span style="color:var(--ink-soft)">IIT Bombay</span>
             </div>
             <h3 class="font-display font-semibold text-lg mb-1">Institute Post-Doctoral Fellow (IPDF)</h3>
             <p class="text-sm mb-3" style="color:var(--ink-soft)">Dept. of Electrical Engineering · ANRF-PAIR IITB Hub–Spoke Project</p>
             <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
-              <li>Advanced computer vision &amp; deep learning for contactless biometric recognition — finger-photo, palmprint, and latent fingerprint.</li>
-              <li>Co-advising PhD, M.Tech. and B.Tech. students on research development and thesis execution.</li>
+              <li>Advance computer vision &amp; deep learning frameworks for contactless biometric recognition — finger-photo, palmprint, and latent fingerprint — and low-light enhancement under blur and noise.</li>
+              <li>Co-advise PhD, M.Tech. and B.Tech. students on core research development, algorithm design, and thesis execution.</li>
               <li>Industrial collaboration with UIDAI and SAMEER.</li>
               <li>Supervisor: <strong>Prof. Vikram M. Gadre</strong>, EED, IIT Bombay.</li>
             </ul>
@@ -226,8 +238,7 @@
             <p class="text-sm mb-3" style="color:var(--ink-soft)">ANRF-PAIR IITB Hub-Spokes Project, EED</p>
             <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
               <li>Designed CV &amp; deep learning frameworks for contactless biometric recognition (finger-photo, palmprint).</li>
-              <li>Managed end-to-end algorithmic experimentation, benchmarking, and joint academic–industrial R&amp;D.</li>
-              <li>Interfaced with UIDAI and SAMEER to align technical deliverables with pilot deployment criteria.</li>
+              <li>Contributed through workshops, seminars, and collaborative research and outreach activities.</li>
             </ul>
           </div>
         </div>
@@ -243,11 +254,29 @@
             <p class="text-sm mb-1" style="color:var(--ink-soft)">Dept. of Electrical Engineering</p>
             <p class="font-mono text-xs italic mb-3" style="color:var(--ink-soft)">Thesis: Deep Learning-based Approaches for Single-Image Super-Resolution</p>
             <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
-              <li>Built deep learning frameworks for SISR: hierarchical feature utilization, edge-guided reconstruction, lightweight architectures.</li>
+              <li>Built deep learning frameworks for SISR: hierarchical feature utilization, edge-guided reconstruction, lightweight architectures and texture-detail enhancement.</li>
               <li>Applied CNNs, Vision Transformers, GANs, VAEs, DDPMs, and State-Space Models.</li>
               <li>Guided student projects in dehazing, underwater restoration, inpainting, and low-light enhancement.</li>
               <li>Coursework: Machine Learning, Digital Image Processing, Digital Signal Processing, Graph Theory.</li>
               <li>Supervisor: <strong>Prof. J. S. Sahambi</strong>, EED, IIT Ropar.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:#7a4c96;"></div>
+          <div class="card p-6">
+            <div class="flex flex-wrap items-center gap-2 mb-2 font-mono text-xs">
+              <span class="pill" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">Jan 2019 – Jun 2020</span>
+              <span style="color:var(--ink-soft)">NIT Hamirpur</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg mb-1">M.Tech Researcher</h3>
+            <p class="font-mono text-xs italic mb-3" style="color:var(--ink-soft)">Thesis: Design of a Lower-Order IIR Filter from a Higher-Order FIR</p>
+            <ul class="font-serif text-[0.95rem] space-y-1.5" style="color:#3a3d47;">
+              <li>Built an automated filter approximation framework using Particle Swarm Optimization to derive IIR transfer functions.</li>
+              <li>Integrated the bisection method to dynamically determine minimal IIR filter order, cutting hardware complexity and delay.</li>
+              <li>Evaluated MSE, H2-norm, H∞-norm and L1-norm cost functions; established MSE as the ideal baseline for phase linearity and stability.</li>
+              <li>Supervisor: <strong>Dr. Aman Kumar</strong>, ECE, NIT Hamirpur.</li>
             </ul>
           </div>
         </div>
@@ -282,10 +311,26 @@
             <p class="text-sm" style="color:var(--ink-soft)">JNGEC, Sundernagar · HP Technical University · 72%</p>
           </div>
         </div>
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:#7a4c96;"></div>
+          <div class="card p-6">
+            <span class="pill mb-2 inline-block" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">2012 – 2013</span>
+            <h3 class="font-display font-semibold text-base mb-1 leading-snug">12th (Senior Secondary)</h3>
+            <p class="text-sm" style="color:var(--ink-soft)">RGM Govt. Sr. Sec. School, Rail · HPBOSE Dharamshala · 72%</p>
+          </div>
+        </div>
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:#7a4c96;"></div>
+          <div class="card p-6">
+            <span class="pill mb-2 inline-block" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">2010 – 2011</span>
+            <h3 class="font-display font-semibold text-base mb-1 leading-snug">10th (Senior Secondary)</h3>
+            <p class="text-sm" style="color:var(--ink-soft)">Govt. High School, Rail · HPBOSE Dharamshala · 80%</p>
+          </div>
+        </div>
       </div>
 
       <h2 class="font-display font-semibold text-2xl mt-14 mb-6">Research interests</h2>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="flex flex-col gap-4">
         <div class="card p-5">
           <p class="font-mono text-xs mb-2" style="color:var(--signal)">01</p>
           <h3 class="font-display font-semibold text-sm mb-1">Deep Learning &amp; CV</h3>
@@ -314,12 +359,61 @@
 
 <div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
 
+<!-- PROJECTS -->
+<section id="projects" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">Projects</p>
+  <h2 class="font-display font-semibold text-3xl mb-10 reveal">Research &amp; development projects</h2>
+
+  <div class="flex flex-col gap-6 reveal">
+
+    <div class="card p-6">
+      <span class="pill pill-status-pub mb-3 inline-block">Ongoing · 2026–Present</span>
+      <h3 class="font-display font-semibold text-lg mb-2">Contactless Biometric Recognition — ANRF-PAIR IITB Hub &amp; Spoke</h3>
+      <p class="font-serif text-sm leading-relaxed" style="color:#3a3d47;">Designing deep learning and computer vision pipelines for finger-photo, palmprint, and latent fingerprint recognition, in collaboration with UIDAI and SAMEER. Work spans dataset curation, network design (e.g. Laplacian detail-aware and wavelet-attention architectures), and benchmarking toward pilot deployment. Co-advising PhD/M.Tech/B.Tech students on the effort.</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="pill">Finger-photo</span><span class="pill">Palmprint</span><span class="pill">Latent fingerprint</span><span class="pill">UIDAI · SAMEER</span>
+      </div>
+    </div>
+
+    <div class="card p-6">
+      <span class="pill pill-status-pub mb-3 inline-block">Ongoing · 2026–Present</span>
+      <h3 class="font-display font-semibold text-lg mb-2">Low-Light Image Enhancement in Complex Scenarios</h3>
+      <p class="font-serif text-sm leading-relaxed" style="color:#3a3d47;">Advancing low-light enhancement for real-world conditions where low illumination co-occurs with blur and sensor noise, extending prior multi-branch transformer-based enhancement work toward more robust, deployable models.</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="pill">Low-light enhancement</span><span class="pill">Denoising</span><span class="pill">Deblurring</span>
+      </div>
+    </div>
+
+    <div class="card p-6">
+      <span class="pill" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">PhD Thesis · 2021–2026</span>
+      <h3 class="font-display font-semibold text-lg mb-2 mt-3">Deep Learning-based Approaches for Single-Image Super-Resolution</h3>
+      <p class="font-serif text-sm leading-relaxed" style="color:#3a3d47;">Developed a family of SISR frameworks — CMOA-Net, RMRDN, MDTN, and an edge-aware detail-preserving network among others — using hierarchical feature utilization, edge-guided reconstruction, and lightweight architectures. Explored CNNs, Vision Transformers, GANs, VAEs, DDPMs, and State-Space Models to improve detail recovery and computational efficiency. Guided student projects in dehazing, underwater restoration, inpainting, and low-light enhancement that grew out of this work.</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="pill">SISR</span><span class="pill">CNNs / ViT</span><span class="pill">GANs · VAEs · DDPMs</span><span class="pill">State-Space Models</span>
+      </div>
+    </div>
+
+    <div class="card p-6">
+      <span class="pill" style="background:#efe6f5;color:#7a4c96;border-color:#dcc4e8;">M.Tech Thesis · 2019–2020</span>
+      <h3 class="font-display font-semibold text-lg mb-2 mt-3">Design of a Lower-Order IIR Filter from a Higher-Order FIR</h3>
+      <p class="font-serif text-sm leading-relaxed" style="color:#3a3d47;">Built an automated filter-approximation framework using Particle Swarm Optimization to derive IIR transfer functions via direct coefficient estimation and root-polynomial formulation, with a bisection method to dynamically determine minimal filter order. Evaluated MSE, H2-norm, H∞-norm and L1-norm cost functions, establishing MSE optimization as the ideal baseline for phase linearity and system stability.</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="pill">Filter design</span><span class="pill">PSO</span><span class="pill">Order reduction</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
+
 <!-- PUBLICATIONS -->
 <section id="publications" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
   <div class="flex flex-wrap items-end justify-between gap-4 mb-10 reveal">
     <div>
       <p class="eyebrow mb-3">Publications</p>
       <h2 class="font-display font-semibold text-3xl">Journals &amp; conferences</h2>
+      <p class="font-mono text-xs mt-2" style="color:var(--ink-soft)">4 journal articles published · 5 under review · 7 peer-reviewed conference papers</p>
     </div>
     <a href="https://scholar.google.com/citations?user=CAypreAAAAAJ&hl=en" target="_blank" class="font-mono text-sm inline-flex items-center gap-1" style="color:var(--signal)">Full profile on Google Scholar ↗</a>
   </div>
@@ -331,29 +425,17 @@
       <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
         <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J1]</span>
         <div class="flex-1">
-          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "CMOA-Net: Competent Multi-Observant Attention Network for Single-Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, vol. 9, no. 6, pp. 3881–3894, Dec. 2025.</p>
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "Image Super-Resolution Method Based on Edge-Aware Detail-Preserving Network," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, doi: 10.1109/TETCI.2026.3683771.</p>
           <div class="mt-2 flex flex-wrap gap-2">
-            <span class="pill pill-if">IF 6.5</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 52</span>
+            <span class="pill pill-status-pub">Published</span><span class="pill pill-if">IF 6.5</span><span class="pill pill-q">Q1</span>
           </div>
         </div>
-        <a href="https://ieeexplore.ieee.org/document/11033188/" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
       </div>
 
       <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
         <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J2]</span>
         <div class="flex-1">
-          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "RMRDN: Recurrent Multi-receptive Residual Dense Network for Image Super-Resolution," <em>Digital Signal Processing</em>, vol. 168, p. 105556, 2026.</p>
-          <div class="mt-2 flex flex-wrap gap-2">
-            <span class="pill pill-if">IF 3.0</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 96</span>
-          </div>
-        </div>
-        <a href="https://www.sciencedirect.com/science/article/pii/S1051200425005780" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
-      </div>
-
-      <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
-        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J3]</span>
-        <div class="flex-1">
-          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "MDTN: Multi-scale Dense Transformer Network for single-image super-resolution," <em>Image and Vision Computing</em>, vol. 164, 2025, p. 105779.</p>
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "MDTN: Multi-scale Dense Transformer Network for Single-Image Super-Resolution," <em>Image and Vision Computing</em>, vol. 164, 2025, p. 105779.</p>
           <div class="mt-2 flex flex-wrap gap-2">
             <span class="pill pill-if">IF 4.2</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 150</span>
           </div>
@@ -362,16 +444,25 @@
       </div>
 
       <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J3]</span>
+        <div class="flex-1">
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "RMRDN: Recurrent Multi-receptive Residual Dense Network for Image Super-Resolution," <em>Digital Signal Processing</em>, vol. 168, p. 105556, 2025.</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="pill pill-if">IF 3.0</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 96</span>
+          </div>
+        </div>
+        <a href="https://www.sciencedirect.com/science/article/pii/S1051200425005780" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex flex-col sm:flex-row sm:items-start gap-3">
         <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[J4]</span>
         <div class="flex-1">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="pill pill-status-pub">Published</span>
-          </div>
-          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "Image Super-Resolution Method Based on Edge-Aware Detail-Preserving Network," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, doi: 10.1109/TETCI.2026.3683771.</p>
+          <p class="font-serif text-[0.97rem] leading-relaxed"><strong>Inderjeet</strong> and J. S. Sahambi, "CMOA-Net: Competent Multi-Observant Attention Network for Single-Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>, doi: 10.1109/TETCI.2025.3574561.</p>
           <div class="mt-2 flex flex-wrap gap-2">
             <span class="pill pill-if">IF 6.5</span><span class="pill pill-q">Q1</span><span class="pill pill-h">H-Index 52</span>
           </div>
         </div>
+        <a href="https://ieeexplore.ieee.org/document/11033188/" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
       </div>
 
       <div class="card p-5">
@@ -381,7 +472,7 @@
 
       <div class="card p-5">
         <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
-        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J6]</span><strong>Inderjeet</strong> and J. S. Sahambi, "SAANet: Scale Aware Attention Network for Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>.</p>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J6]</span><strong>Inderjeet</strong> and J. S. Sahambi, "SAANet: Scale-Aware Attention Network for Image Super-Resolution," <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em>.</p>
       </div>
 
       <div class="card p-5">
@@ -391,12 +482,12 @@
 
       <div class="card p-5">
         <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
-        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J8]</span>A. Bharadwaj, <strong>Inderjeet</strong> and J. S. Sahambi, "Low Light Image Enhancement via Multi-Branch Transformer-based Network," <em>Digital Signal Processing</em>.</p>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J8]</span>A. Bharadwaj, <strong>Inderjeet</strong> and J. S. Sahambi, "Low-Light Image Enhancement via Multi-Branch Transformer-based Network," <em>Digital Signal Processing</em>.</p>
       </div>
 
       <div class="card p-5">
-        <span class="pill mb-2 inline-block" style="background:#f0f0f0;color:#555;border-color:#ddd;">Under Preparation</span>
-        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J9]</span><strong>Inderjeet</strong>, K. Kotwal and V. M. Gadre, "ELDNet: Efficient Laplacian Detail-aware Network for Finger Photo Recognition," <em>Pattern Recognition</em>.</p>
+        <span class="pill pill-status-rev mb-2 inline-block">Under Review</span>
+        <p class="font-serif text-[0.97rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[J9]</span><strong>Inderjeet</strong>, K. Kotwal, D. Jadhav and V. M. Gadre, "LDRNet: Laplacian Detailed Residual Network for Finger-Photo Recognition," <em>Pattern Recognition</em>.</p>
       </div>
 
     </div>
@@ -406,45 +497,45 @@
     <h3 class="font-display font-semibold text-xl mb-5"><span class="eyebrow" style="color:var(--ink-soft)">// Conference papers</span></h3>
     <div class="space-y-3">
 
-      <div class="card p-5 flex items-start gap-3">
-        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C1]</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "GAMSRN: Global Attention Multi-Scale Residual Network for Single-Image Super-Resolution and Low-Light Enhancement," <em>NCC 2025</em>, New Delhi, pp. 1–6. doi: 10.1109/NCC63735.2025.10982884.</p>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10982884" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      <div class="card p-5">
+        <span class="pill pill-status-pub mb-2 inline-block">Published</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[C1]</span>D. S. Jadav, S. Dongare, <strong>Inderjeet</strong>, S. Pateria, D. Kumar, H. Goklani and V. M. Gadre, "Scale-Aware Economy-Accuracy Trade-Off in Contactless Palmprint Recognition Using 14-Tap Q-Shift DTCWT and Layer-Wise Attention," <em>SPCOM 2026</em>, Bangalore, India, pp. 1–5, doi: 10.1109/SPCOM71105.2026.11623015.</p>
       </div>
 
       <div class="card p-5 flex items-start gap-3">
         <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C2]</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "Residual Frequency Content Awareness Approach for Image Super Resolution," <em>NCC 2024</em>, Chennai, pp. 1–6. doi: 10.1109/NCC60321.2024.10485711.</p>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10067881" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
-      </div>
-
-      <div class="card p-5 flex items-start gap-3">
-        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C3]</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "Efficient Contextual Feature Network for Single Image Super Resolution," <em>CVIP 2023</em>, CCIS vol. 2010, Springer, Cham. doi: 10.1007/978-3-031-58174-8_18.</p>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-58174-8_18" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
-      </div>
-
-      <div class="card p-5 flex items-start gap-3">
-        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C4]</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "A Lightweight Deep Residual Attention Network for Single Image Super Resolution," <em>NCC 2023</em>, Guwahati, pp. 1–6. doi: 10.1109/NCC56989.2023.10067881.</p>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10485711" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
-      </div>
-
-      <div class="card p-5 flex items-start gap-3">
-        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C5]</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong>, A. Bharadwaj and J. S. Sahambi, "CDAN: Contextual Detail Awareness Network for Image Super-Resolution," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 59–65. doi: 10.1109/IoTaIS67227.2025.11282077.</p>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong>, A. Bharadwaj and J. S. Sahambi, "CDAN: Contextual Detail Awareness Network for Image Super-Resolution," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 59–65, doi: 10.1109/IoTaIS67227.2025.11282077.</p>
         <a href="https://ieeexplore.ieee.org/document/11282077" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
       </div>
 
       <div class="card p-5 flex items-start gap-3">
-        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C6]</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed flex-1">A. Bharadwaj, <strong>Inderjeet</strong> and J. S. Sahambi, "MDNet: Multi-Scale Detail-aware Network for Low-Light Image Enhancement," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 76–82. doi: 10.1109/IoTaIS67227.2025.11282085.</p>
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C3]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1">A. Bharadwaj, <strong>Inderjeet</strong> and J. S. Sahambi, "MDNet: Multi-Scale Detail-aware Network for Low-Light Image Enhancement," <em>IoTaIS 2025</em>, Bali, Indonesia, pp. 76–82, doi: 10.1109/IoTaIS67227.2025.11282085.</p>
         <a href="https://ieeexplore.ieee.org/document/11282085" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
       </div>
 
-      <div class="card p-5">
-        <span class="pill pill-status-acc mb-2 inline-block">Accepted</span>
-        <p class="font-serif text-[0.95rem] leading-relaxed"><span class="font-mono text-xs mr-1" style="color:var(--ink-soft)">[C7]</span>Divyang, S. Dongare, <strong>Inderjeet</strong>, D. Saxena, S. Pateriya and V. M. Gadre, "Scale-aware Economy-Accuracy Trade-off in Contactless Palmprint Recognition Using 14-Tap Q-Shift DTCWT and Layer-Wise Attention," <em>SPCOM 2026</em>, IISc Bengaluru, India.</p>
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C4]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "GAMSRN: Global Attention Multi-Scale Residual Network for Single-Image Super-Resolution and Low-Light Enhancement," <em>NCC 2025</em>, New Delhi, pp. 1–6, doi: 10.1109/NCC63735.2025.10982884.</p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10982884" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C5]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "Residual Frequency Content Awareness Approach for Image Super-Resolution," <em>NCC 2024</em>, Chennai, pp. 1–6, doi: 10.1109/NCC60321.2024.10485711.</p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10485711" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C6]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "Efficient Contextual Feature Network for Single-Image Super-Resolution," <em>CVIP 2023</em>, CCIS vol. 2010, Springer, Cham, 2024, doi: 10.1007/978-3-031-58174-8_18.</p>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-58174-8_18" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
+      </div>
+
+      <div class="card p-5 flex items-start gap-3">
+        <span class="font-mono text-xs shrink-0" style="color:var(--ink-soft)">[C7]</span>
+        <p class="font-serif text-[0.95rem] leading-relaxed flex-1"><strong>Inderjeet</strong> and J. S. Sahambi, "A Lightweight Deep Residual Attention Network for Single-Image Super-Resolution," <em>NCC 2023</em>, Guwahati, pp. 1–6, doi: 10.1109/NCC56989.2023.10067881.</p>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10067881" target="_blank" class="font-mono text-xs shrink-0" style="color:var(--signal)">link ↗</a>
       </div>
 
     </div>
@@ -458,7 +549,7 @@
   <p class="eyebrow mb-3 reveal">Mentorship</p>
   <h2 class="font-display font-semibold text-3xl mb-10 reveal">Students &amp; interns</h2>
 
-  <div class="grid lg:grid-cols-2 gap-10">
+  <div class="flex flex-col gap-10">
     <div class="reveal">
       <h3 class="font-display font-semibold text-lg mb-4">M.Tech. Students <span class="font-mono text-xs" style="color:var(--ink-soft)">— IIT Ropar</span></h3>
       <div class="space-y-3">
@@ -520,7 +611,7 @@
 
 <!-- SKILLS & TEACHING -->
 <section id="skills" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
-  <div class="grid lg:grid-cols-2 gap-16">
+  <div class="flex flex-col gap-16">
     <div class="reveal">
       <p class="eyebrow mb-3">Skills</p>
       <h2 class="font-display font-semibold text-2xl mb-8">Technical &amp; research skills</h2>
@@ -560,8 +651,15 @@
 
     <div class="reveal">
       <p class="eyebrow mb-3">Teaching</p>
-      <h2 class="font-display font-semibold text-2xl mb-8">Teaching assistantship</h2>
+      <h2 class="font-display font-semibold text-2xl mb-8">Teaching associateship</h2>
       <div class="rail">
+        <div class="rail-item">
+          <div class="rail-dot" style="border-color:var(--copper);"></div>
+          <div class="card p-5">
+            <h3 class="font-display font-semibold">Digital Signal Processing and its Applications</h3>
+            <p class="font-mono text-xs mt-1" style="color:var(--ink-soft)">IIT Bombay · Jul 2026 – Present</p>
+          </div>
+        </div>
         <div class="rail-item">
           <div class="rail-dot" style="border-color:var(--copper);"></div>
           <div class="card p-5">
@@ -595,7 +693,7 @@
   <p class="eyebrow mb-3 reveal">Awards</p>
   <h2 class="font-display font-semibold text-3xl mb-10 reveal">Recognition &amp; fellowships</h2>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 reveal">
+  <div class="flex flex-col gap-4 reveal">
     <div class="card p-6">
       <p class="font-mono text-xs mb-3" style="color:var(--signal)">2026</p>
       <h3 class="font-display font-semibold mb-2">Institute Post-Doctoral Fellowship (IPDF)</h3>
@@ -604,12 +702,17 @@
     <div class="card p-6">
       <p class="font-mono text-xs mb-3" style="color:var(--signal)">2026</p>
       <h3 class="font-display font-semibold mb-2">ID-Tech Roundtable, UIDAI</h3>
-      <p class="font-serif text-sm" style="color:var(--ink-soft)">Represented IIT Bombay — nominated by Prof. Gadre alongside Prof. Saravanan — at the ID-Tech Roundtables, 3 July 2026, UIDAI Centre, Bengaluru.</p>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Represented IIT Bombay — alongside Prof. Saravanan — at the ID-Tech Round-Tables Meeting, 3 July 2026, UIDAI Centre, Bengaluru.</p>
+    </div>
+    <div class="card p-6">
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">Jul 2025</p>
+      <h3 class="font-display font-semibold mb-2">CEEE-INAE Teaching Associate Program</h3>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Taught alongside Prof. V. M. Gadre and Prof. Kumar Appaiah, EED IIT Bombay, on Signals and Systems (lectures, tutorials, lab sessions), 6–11 July 2025 (18 hours).</p>
     </div>
     <div class="card p-6">
       <p class="font-mono text-xs mb-3" style="color:var(--signal)">2021–2026</p>
       <h3 class="font-display font-semibold mb-2">MHRD / MoE Doctoral Fellowship</h3>
-      <p class="font-serif text-sm" style="color:var(--ink-soft)">National research fellowship, Ministry of Education, Government of India.</p>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">National research fellowship, Ministry of Human Resource Development / Education, Government of India, IIT Ropar.</p>
     </div>
     <div class="card p-6">
       <p class="font-mono text-xs mb-3" style="color:var(--signal)">2018–2020</p>
@@ -617,9 +720,9 @@
       <p class="font-serif text-sm" style="color:var(--ink-soft)">Awarded by AICTE, Government of India, for postgraduate studies.</p>
     </div>
     <div class="card p-6">
-      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2018–2022</p>
+      <p class="font-mono text-xs mb-3" style="color:var(--signal)">2018–2021</p>
       <h3 class="font-display font-semibold mb-2">GATE Qualification (×4)</h3>
-      <p class="font-serif text-sm" style="color:var(--ink-soft)">Qualified GATE in EC four times. Best score: 545/1000 (GATE 2020).</p>
+      <p class="font-serif text-sm" style="color:var(--ink-soft)">Qualified GATE in EC four times. Best score: 545/1000 (44/100), GATE 2020.</p>
     </div>
     <div class="card p-6">
       <p class="font-mono text-xs mb-3" style="color:var(--signal)">2021</p>
@@ -631,7 +734,7 @@
       <h3 class="font-display font-semibold mb-2">JEE Mains</h3>
       <p class="font-serif text-sm" style="color:var(--ink-soft)">Cleared the Joint Entrance Examination Mains, 2013.</p>
     </div>
-    <div class="card p-6 sm:col-span-2 lg:col-span-2">
+    <div class="card p-6">
       <p class="font-mono text-xs mb-3" style="color:var(--signal)">2023 – 2025</p>
       <h3 class="font-display font-semibold mb-2">Conference presentations, NCC / CVIP / IoTaIS</h3>
       <p class="font-serif text-sm" style="color:var(--ink-soft)">Presented work at the National Conference on Communications (2023–2025, hosted at IIT Guwahati, Madras, Delhi), CVIP 2023 at IIT Jammu, and internationally at IEEE IoTaIS 2025, Bali, Indonesia.</p>
@@ -641,11 +744,40 @@
 
 <div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
 
+<!-- REFERENCES -->
+<section id="references" class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+  <p class="eyebrow mb-3 reveal">References</p>
+  <h2 class="font-display font-semibold text-3xl mb-10 reveal">Referees</h2>
+  <div class="flex flex-col gap-4 reveal">
+    <div class="card p-5">
+      <h3 class="font-display font-semibold text-sm mb-1">Prof. Jyotindra Singh Sahambi</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Professor, Dept. of Electrical Engineering, IIT Ropar</p>
+      <a href="mailto:jsahambi@iitrpr.ac.in" class="font-mono text-xs" style="color:var(--signal)">jsahambi@iitrpr.ac.in</a>
+    </div>
+    <div class="card p-5">
+      <h3 class="font-display font-semibold text-sm mb-1">Prof. Vikram M. Gadre</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Professor, Dept. of Electrical Engineering, IIT Bombay</p>
+      <a href="mailto:vmgadre@ee.iitb.ac.in" class="font-mono text-xs" style="color:var(--signal)">vmgadre@ee.iitb.ac.in</a>
+    </div>
+    <div class="card p-5">
+      <h3 class="font-display font-semibold text-sm mb-1">Dr. Brijesh Kumbhani</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Assistant Professor, Dept. of Electrical Engineering, IIT Ropar</p>
+      <a href="mailto:brijesh@iitrpr.ac.in" class="font-mono text-xs" style="color:var(--signal)">brijesh@iitrpr.ac.in</a>
+    </div>
+    <div class="card p-5">
+      <h3 class="font-display font-semibold text-sm mb-1">Dr. Aman Kumar</h3>
+      <p class="font-serif text-sm mb-2" style="color:var(--ink-soft)">Assistant Professor, Dept. of ECE, NIT Hamirpur</p>
+      <a href="mailto:akumar@nith.ac.in" class="font-mono text-xs" style="color:var(--signal)">akumar@nith.ac.in</a>
+    </div>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-5"><hr style="border-color:var(--line);"></div>
 
 <!-- CONTACT -->
-<section id="contact" class="py-20" style="background:var(--ink);color:var(--paper);">
+<section id="contact" class="py-20 hero-bg" style="color:var(--paper);">
   <div class="max-w-4xl mx-auto px-5 sm:px-8">
-    <div class="grid md:grid-cols-2 gap-12">
+    <div class="flex flex-col gap-12">
       <div class="reveal">
         <p class="eyebrow mb-3">Contact</p>
         <h2 class="font-display font-semibold text-3xl mb-5">Let's connect</h2>
@@ -659,6 +791,7 @@
         <p class="eyebrow mb-3">Personal details</p>
         <div class="font-mono text-sm space-y-2" style="color:#c8cad6;">
           <p><span style="color:#7d8296;">Name</span> — Inderjeet</p>
+          <p><span style="color:#7d8296;">Nationality</span> — Indian</p>
           <p><span style="color:#7d8296;">Current status</span> — Post-Doctoral Fellow, EED, IIT Bombay</p>
         </div>
       </div>
@@ -667,7 +800,7 @@
 </section>
 
 <footer class="py-8 text-center border-t" style="border-color:var(--line);">
-  <p class="font-mono text-xs" style="color:var(--ink-soft)">© <span id="year"></span> Inderjeet · Institute Post-Doctoral Fellow (IPDF), IIT Bombay</p>
+  <p class="font-mono text-xs" style="color:var(--ink-soft)">© <span id="year"></span> Inderjeet</p>
 </footer>
 
 <script>
